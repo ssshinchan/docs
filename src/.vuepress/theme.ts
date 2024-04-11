@@ -8,6 +8,8 @@ export default hopeTheme({
   author: {
     name: "NULL"
   },
+  
+  headerDepth:5,
 
   iconAssets: "fontawesome-with-brands",
 
