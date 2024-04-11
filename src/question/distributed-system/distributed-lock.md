@@ -1,7 +1,7 @@
 ---
 title: 分布式锁
 ---
-# Redis {#custom-id}
+# Redis
 
 ## Redis 的 SETNX
 
