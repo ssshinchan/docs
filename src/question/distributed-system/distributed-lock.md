@@ -162,7 +162,7 @@ ttl k
 
 执行结果如下图所示：每运行一次 `ttl` 命令，就可以看到 `k` 的过期时间就会减少。最后会变为 -2（已过期）。
 
-![](https://developer.qcloudimg.com/http-save/yehe-2145707/c513850692c05efa3c58a2ff6b231396.png)
+![Alt text](image-12.png)
 
 ### 技术原理图
 
@@ -269,7 +269,7 @@ if(lock) {
 
 上面的方案看似很完美，但还是存在问题：第 4 步和第 5 步并不是原子性的。
 
-![](https://developer.qcloudimg.com/http-save/yehe-2145707/6e9650efc13f8a9f3de58c599091bc7c.png)
+![Alt text](image-11.png)
 
 +   时刻：0s。线程 A 抢占到了锁。
 +   时刻：9.5s。线程 A 向 Redis 查询当前 key 的值。
