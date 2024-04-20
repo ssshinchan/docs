@@ -458,7 +458,7 @@ WuKong-lock 有值，而且大家可以看到 TTL 在不断变小，说明 WuKon
 
 如下图所示：
 
-![](https://ask.qcloudimg.com/http-save/yehe-2145707/1018a6e1fff0dc6cddafcc73c509639a.png)
+![Alt text](image-20.png)
 
 #### 设置锁过期时间
 
