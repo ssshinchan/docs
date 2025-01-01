@@ -18,6 +18,13 @@ export const enSidebar = sidebar({
       collapsible: true,
     },
     {
+      text: "Japanese",
+      icon: "book",
+      prefix: "japanese/",
+      children: "structure",
+      collapsible: true,
+    },
+    {
       text: "Demo",
       icon: "laptop-code",
       prefix: "demo/",
