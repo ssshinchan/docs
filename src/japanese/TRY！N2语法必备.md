@@ -319,3 +319,74 @@
 <audio controls src="/assets/audio/38 曲目 38.mp3" title="38"></audio>
 
 ![alt text](image-11.png)
+
+## 9 食べ放題 (1)
+| 日语 (假名) | 中文含义 | 日语 (假名) | 中文含义 |
+|------------|---------|------------|---------|
+| 食べ放題(ほうだい) | 自助畅吃,随便吃 | くしゃみ | 喷嚏 |
+| 肉じゃが | 日式土豆炖肉 | センサー | 感应器 |
+| 食事を抜（ぬ）く | 不吃饭,饿肚子 | エジプト | 埃及 |
+| 空腹（くうふく） | 空腹,空腹的 | ライター | 打火机 |
+| 虫歯（むしば） | 虫牙,蛀牙 | 着火（ちゃっか） | 着火 |
+| 歯を抜（ぬ）く | 拔牙 | いたずら | 淘气,恶作剧;玩弄 |
+| 見合い（みあい） | 相亲 | 揺（ゆ）れる | 摇晃,摇摆 |
+| ベンチ | 长凳 | 粒（つぶ） | 粒,颗 |
+| ペンキ | 油漆 | 独創（どくそう） | 独创的 |
+| よそ | 其他 | カーブ | 弯道,弯 |
+| 吠える（ほえる） | 吼叫,咆哮 | 見通しが悪い | 能见度差,看不远 |
+| しょっちゅう | 经常,总是 | プリンター | 打印机 |
+| フリーズ | 死机 | チャット | 聊天 |
+| 玄関（げんかん） | 玄关 | 紫（むらさき） | 紫色 |
+
+<audio controls src="/assets/audio/42 曲目 42.mp3" title="42"></audio>
+
+![alt text](image-12.png)
+
+## 9 食べ放題 (2)
+
+<audio controls src="/assets/audio/43 曲目 43.mp3" title="43"></audio>
+
+![alt text](image-13.png)
+
+## 10 满員電車(1)
+<audio controls src="/assets/audio/48 曲目 48.mp3" title="48"></audio>
+
+![alt text](image-14.png)
+
+## 10 满員電車(2)
+
+<audio controls src="/assets/audio/49 曲目 49.mp3" title="49"></audio>
+
+![alt text](image-15.png)
+
+## 11 ラーメンの紹介
+
+<audio controls src="/assets/audio/54 曲目 54.mp3" title="54"></audio>
+
+![alt text](image-16.png)
+
+## 12 ウオ-キンゲシュ-ズの開発(1)
+
+<audio controls src="/assets/audio/57 曲目 57.mp3" title="57"></audio>
+
+![alt text](image-17.png)
+
+## 12 ウオ-キンゲシュ-ズの開発(2)
+<audio controls src="/assets/audio/58 曲目 58.mp3" title="58"></audio>
+
+![alt text](image-18.png)
+
+## 13 人生の転機(1)
+<audio controls src="/assets/audio/63 曲目 63.mp3" title="63"></audio>
+
+![alt text](image-19.png)
+
+## 13 人生の転機(2)
+<audio controls src="/assets/audio/64 曲目 64.mp3" title="64"></audio>
+
+![alt text](image-20.png)
+
+## 14 オリンビックの開催について
+<audio controls src="/assets/audio/68 曲目 68.mp3" title="68"></audio>
+
+![alt text](image-21.png)
