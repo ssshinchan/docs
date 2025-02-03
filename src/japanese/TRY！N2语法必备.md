@@ -39,7 +39,7 @@
 | 老若男女（ろうにゃくだんじょ） | 男女老少 | 下取り(したどり) | 以旧换新 |
 | 提供（ていきょう） | 提供,供应,给予 | 通常(つうじょう) | 通常，平常 |
 
-<audio controls src="/assets/audio/02 曲目 2.mp3" title="2"></audio>
+<audio controls src="/assets/audio/02 曲目 2.mp3" title="2" style="width: 100%;"></audio>
 ![alt text](image-1.png)
 
 ## 2 転任のあいさつ(1)
@@ -64,7 +64,7 @@
 | 確保 (かくほ) | 保障, 确保 | 録音 (ろくおん) | 录音 |
 | 犯罪 (はんざい) | 犯罪 | 疑う (うたがう) | 怀疑 |
 
-<audio controls src="/assets/audio/04 曲目 4.mp3" title="4"></audio>
+<audio controls src="/assets/audio/04 曲目 4.mp3" title="4" style="width: 100%;"></audio>
 ![alt text](image.png)
 
 ## 2 転任のあいさつ(2)
@@ -100,7 +100,7 @@
 | 催し物(もよおしもの) | 文娱活动，集会，庆典 | 精一杯(せいいっぱい) | 尽力，拼命 |
 | ~~コンテスト~~ | 竞赛,大赛,比赛 | 応援(おうえん) | 应援，声援 |
 
-<audio controls src="/assets/audio/05 曲目 5.mp3" title="5"></audio>
+<audio controls src="/assets/audio/05 曲目 5.mp3" title="5" style="width: 100%;"></audio>
 ![alt text](image-2.png)
 
 ## 3 ホテルの仕事
@@ -128,7 +128,7 @@
 | 仕事に就く | 就职,找到工作 | 防ぐ(ふせぐ) | 防御，预防 |
 | 魅力（みりょく） | 魅力 | 納入(のうにゅう) | 缴纳，上缴(钱/物) |
 
-<audio controls src="/assets/audio/10 曲目 10.mp3" title="10"></audio>
+<audio controls src="/assets/audio/10 曲目 10.mp3" title="10" style="width: 100%;"></audio>
 ![alt text](image-3.png)
 
 ## 4 台風情報
@@ -162,7 +162,7 @@
 | 不況（ふきょう） | 不景气,萧条 | 重ねる(かさねる) | 追加；反复，重复 |
 | 日焼け（ひやけ） | 日晒,晒黑 | 悔(く)いのない | 不后悔 |
 
-<audio controls src="/assets/audio/15 曲目 15.mp3" title="15"></audio>
+<audio controls src="/assets/audio/15 曲目 15.mp3" title="15" style="width: 100%;"></audio>
 
 ![alt text](image-4.png)
 
@@ -186,7 +186,8 @@
 | 学校に通う(かよう) | 每天上补习班 | 心細い（こころぼそい） | 不安、胆怯 |
 | 修復（しゅうふく） | 修复,改善 | がっかり | 颓废，失望 |
 
-<audio controls src="/assets/audio/20 曲目 20.mp3" title="20"></audio>
+<audio controls src="/assets/audio/20 曲目 20.mp3" title="20" style="width: 100%;"></audio>
+
 
 ![alt text](image-5.png)
 
@@ -203,7 +204,7 @@
 | 面倒（めんどう） | 麻烦；照料 | へらへら（する） | 憨笑，傻笑；阿谀奉承 |
 | 引(ひ)き受(う)ける | 接受,负责,承揽 | 機嫌(きげん) | 情绪，心情；高兴的，痛快的 |
 
-<audio controls src="/assets/audio/21 曲目 21.mp3" title="21"></audio>
+<audio controls src="/assets/audio/21 曲目 21.mp3" title="21" style="width: 100%;"></audio>
 
 ![alt text](image-6.png)
 
@@ -221,7 +222,7 @@
 | 向こう（＝相手） | 对方 | 批判（ひはん） | 批判 |
 | 虫に刺（さ）される | 被虫蛰,被虫咬 | とんでもない | 不可能的事,毫无道理,岂有此理,意想不到的 |
 
-<audio controls src="/assets/audio/25 曲目 25.mp3" title="25"></audio>
+<audio controls src="/assets/audio/25 曲目 25.mp3" title="25" style="width: 100%;"></audio>
 
 ![alt text](image-7.png)
 
@@ -239,7 +240,7 @@
 | 奢る（おごる） | 请客 | ニーズ | 要求，需求 |
 | 朝一（あさいち） | 早上先，早上第一件事 | セキュリティーシステム | 安保系统 |
 
-<audio controls src="/assets/audio/26 曲目 26.mp3" title="26"></audio>
+<audio controls src="/assets/audio/26 曲目 26.mp3" title="26" style="width: 100%;"></audio>
 
 ![alt text](image-8.png)
 
@@ -272,7 +273,7 @@
 | 誘致（ゆうち） | 招揽,招致 | 不景気(ふけいき) | 不景气，不繁荣，萧条 |
 | 慎重（しんちょう） | 慎重 | 学割(がくわり) | 学生优惠 |
 
-<audio controls src="/assets/audio/32 曲目 32.mp3" title="32"></audio>
+<audio controls src="/assets/audio/32 曲目 32.mp3" title="32" style="width: 100%;"></audio>
 
 ![alt text](image-9.png)
 
@@ -299,7 +300,7 @@
 | 細心(さいしん)の注意を払う | 密切关注/注意 | 勝負（しょうぶ） | 比赛；胜负 |
 | 予知（よち） | 预知 | 年配(ねんぱい) | 过中年的人；大致年龄 |
 
-<audio controls src="/assets/audio/33 曲目 33.mp3" title="33"></audio>
+<audio controls src="/assets/audio/33 曲目 33.mp3" title="33" style="width: 100%;"></audio>
 
 ![alt text](image-10.png)
 
@@ -316,7 +317,7 @@
 | 少々（しょうしょう） | 稍微 | とんだこと | 意想不到的事；严重的事 |
 | 寄付（きふ） | 捐款,捐赠,赠送 | 気にする | 介意；担心，关心 |
 
-<audio controls src="/assets/audio/38 曲目 38.mp3" title="38"></audio>
+<audio controls src="/assets/audio/38 曲目 38.mp3" title="38" style="width: 100%;"></audio>
 
 ![alt text](image-11.png)
 
@@ -338,7 +339,7 @@
 | フリーズ | 死机 | チャット | 聊天 |
 | 玄関（げんかん） | 玄关 | 紫（むらさき） | 紫色 |
 
-<audio controls src="/assets/audio/42 曲目 42.mp3" title="42"></audio>
+<audio controls src="/assets/audio/42 曲目 42.mp3" title="42" style="width: 100%;"></audio>
 
 ![alt text](image-12.png)
 
@@ -358,7 +359,7 @@
 | 勇気（ゆうき） | 勇气 | 潰す（つぶす） | 击溃，毁掉 |
 | 写す(うつす) | 抄写，临摹；描绘；拍摄 | 誤魔化す(ごまかす) | 蒙骗，糊弄 |
 
-<audio controls src="/assets/audio/43 曲目 43.mp3" title="43"></audio>
+<audio controls src="/assets/audio/43 曲目 43.mp3" title="43" style="width: 100%;"></audio>
 
 ![alt text](image-13.png)
 
@@ -375,7 +376,7 @@
 | 利害（りがい） | 利害 | たいした～じゃない | 不是什么大不了的～,不那么～ |
 | 対立（たいりつ） | 对立 | 儲け（もうけ） | 利润,赚头 |
 
-<audio controls src="/assets/audio/48 曲目 48.mp3" title="48"></audio>
+<audio controls src="/assets/audio/48 曲目 48.mp3" title="48" style="width: 100%;"></audio>
 
 ![alt text](image-14.png)
 
@@ -394,7 +395,7 @@
 | ビタミン | 维生素 | 襲う（おそう） | 袭击 |
 | 喚く（わめく） | 叫,呼唤,嚷嚷 | 驚かす(おどろかす) | 吓唬，使害怕 |
 
-<audio controls src="/assets/audio/49 曲目 49.mp3" title="49"></audio>
+<audio controls src="/assets/audio/49 曲目 49.mp3" title="49" style="width: 100%;"></audio>
 
 ![alt text](image-15.png)
 
@@ -421,7 +422,7 @@
 | 下痢（げり） | 腹泻,拉肚子 | 緊張がほぐれる | 紧张消除，放松下来 |
 
 
-<audio controls src="/assets/audio/54 曲目 54.mp3" title="54"></audio>
+<audio controls src="/assets/audio/54 曲目 54.mp3" title="54" style="width: 100%;"></audio>
 
 ![alt text](image-16.png)
 
@@ -443,7 +444,7 @@
 | カルシウム | 钙 | 手順(てじゅん) | 顺序，步骤 |
 | 補う（おぎなう） | 补充,补偿,弥补 | 宝くじ(たからくじ) | 彩票 |
 
-<audio controls src="/assets/audio/57 曲目 57.mp3" title="57"></audio>
+<audio controls src="/assets/audio/57 曲目 57.mp3" title="57" style="width: 100%;"></audio>
 
 ![alt text](image-17.png)
 
@@ -465,7 +466,7 @@
 | 出費（しゅっぴ） | 支出,开支,开销 | ユニーク | 独特，特有 |
 | リハーサル | 彩排,排练 | 並み(なみ) | 普通，一般；同等程度 |
 
-<audio controls src="/assets/audio/58 曲目 58.mp3" title="58"></audio>
+<audio controls src="/assets/audio/58 曲目 58.mp3" title="58" style="width: 100%;"></audio>
 
 ![alt text](image-18.png)
 
@@ -486,7 +487,7 @@
 | おかず | 小菜,菜肴 | さんざん | 拼命地,狠狠地,彻底地 |
 | ささやく | 喃喃细语,咬耳朵 | 苦労(くろう)を重(かさ)ねる | 吃了很多苦,不断受苦 |
 
-<audio controls src="/assets/audio/63 曲目 63.mp3" title="63"></audio>
+<audio controls src="/assets/audio/63 曲目 63.mp3" title="63" style="width: 100%;"></audio>
 
 ![alt text](image-19.png)
 
@@ -510,7 +511,7 @@
 | 人目（ひとめ） | 别人的眼目,众目 | セーターを編む(あむ) | 织毛衣 |
 | 虫に刺（さ）される | 被虫咬,被虫蛰 | ミステリー | 神秘，玄幻 |
 
-<audio controls src="/assets/audio/64 曲目 64.mp3" title="64"></audio>
+<audio controls src="/assets/audio/64 曲目 64.mp3" title="64" style="width: 100%;"></audio>
 
 ![alt text](image-20.png)
 
@@ -538,6 +539,6 @@
 | 差別（さべつ） | 差别,区别 | 芝生(しばふ) | 草坪 |
 | 改善（かいぜん） | 改善 | 過失(かしつ) | 过失 |
 
-<audio controls src="/assets/audio/68 曲目 68.mp3" title="68"></audio>
+<audio controls src="/assets/audio/68 曲目 68.mp3" title="68" style="width: 100%;"></audio>
 
 ![alt text](image-21.png)
