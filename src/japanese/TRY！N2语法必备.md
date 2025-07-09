@@ -48,7 +48,7 @@
 - {Vる / Vた / Nの} 際に：在...情况时(书面)
 - {Vる / Vない / Nの} ことだ: (不)应该~(注意事项)
 
-<audio controls src="/assets/audio/02 曲目 2.mp3" title="2" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/02 曲目 2.mp3" title="2" style="width: 100%;"></audio>
 ![alt text](image-1.png)
 
 ## 2 転任のあいさつ(1)
@@ -82,7 +82,7 @@
 - {V / Nの} 上で(は) / 上での: 在...上(方面), 后跟重要的事, 上[うえ]
 - {V连用 / AI / AN / N} ながら(も):  虽然…但是…
 
-<audio controls src="/assets/audio/04 曲目 4.mp3" title="4" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/04 曲目 4.mp3" title="4" style="width: 100%;"></audio>
 ![alt text](image.png)
 
 ## 2 転任のあいさつ(2)
@@ -125,7 +125,7 @@
 - {Vる} ことなく / こともなく：(保持)不…
 - {V / AI / AN / N} にもかかわらず: 虽然…但是…, 関わる[かかわる]: 关系到
 
-<audio controls src="/assets/audio/05 曲目 5.mp3" title="5" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/05 曲目 5.mp3" title="5" style="width: 100%;"></audio>
 ![alt text](image-2.png)
 
 ## 3 ホテルの仕事
@@ -165,7 +165,7 @@
 - {Vて / Nで} はいられない: 不可能(持续)…
 {V~~て~~} ちゃいられない
 
-<audio controls src="/assets/audio/10 曲目 10.mp3" title="10" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/10 曲目 10.mp3" title="10" style="width: 100%;"></audio>
 ![alt text](image-3.png)
 
 ## 4 台風情報
@@ -208,7 +208,7 @@
 - {V / AI / AN / N} とともに: 与…的同时, 随着…, 共[とも]
 - {V连用 / V3~~する~~ / N} 次第: (现在还做不到,但)...的话马上做..., 次第[しだい]: 顺序
 
-<audio controls src="/assets/audio/15 曲目 15.mp3" title="15" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/15 曲目 15.mp3" title="15" style="width: 100%;"></audio>
 
 ![alt text](image-4.png)
 
@@ -239,7 +239,7 @@
 - {V / AI / AN / N} にしては: 就…而言(表示评价的标准)
 - {Vる / ANな / Aい / Nの} ことか: 多么…啊, 表达强烈的感情, 常与「どれほど/どんなに/なんと/何度」等词呼应使用
 
-<audio controls src="/assets/audio/20 曲目 20.mp3" title="20" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/20 曲目 20.mp3" title="20" style="width: 100%;"></audio>
 
 ![alt text](image-5.png)
 
@@ -263,7 +263,7 @@
 - {V}ものではない / もんじゃない：不应该…
 - {V}だけ{V}：...可能失败(但去试试)
 
-<audio controls src="/assets/audio/21 曲目 21.mp3" title="21" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/21 曲目 21.mp3" title="21" style="width: 100%;"></audio>
 
 ![alt text](image-6.png)
 
@@ -288,7 +288,7 @@
 - {V / ANな / AI / Nな} ものか / もんか: 绝对不…
 - {N} というものだ： 普遍认为...
 
-<audio controls src="/assets/audio/25 曲目 25.mp3" title="25" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/25 曲目 25.mp3" title="25" style="width: 100%;"></audio>
 
 ![alt text](image-7.png)
 
@@ -315,7 +315,7 @@
 - {Vる / N} のみ：只有...(正式)
 - {Vた} つもりで: 本来不是这样就当是...
 
-<audio controls src="/assets/audio/26 曲目 26.mp3" title="26" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/26 曲目 26.mp3" title="26" style="width: 100%;"></audio>
 
 ![alt text](image-8.png)
 
@@ -356,7 +356,7 @@
 - (N や) N といった: …等等(举例)
 - {V / N} にしたがって/にしたがい: ①按照②随着, 従[したが]う: 跟随; 按照; 随着
 
-<audio controls src="/assets/audio/32 曲目 32.mp3" title="32" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/32 曲目 32.mp3" title="32" style="width: 100%;"></audio>
 
 ![alt text](image-9.png)
 
@@ -393,7 +393,7 @@
 - {V连用} つつある: 一点一点变化…
 - {N} に限らず: 不仅...(而且...)
 
-<audio controls src="/assets/audio/33 曲目 33.mp3" title="33" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/33 曲目 33.mp3" title="33" style="width: 100%;"></audio>
 
 ![alt text](image-10.png)
 
@@ -416,7 +416,7 @@
 - {Vば} と思う：如果...就好了(省略了幸い/ありがたい)
 - {N} につきまして： 关于... (...について・...にとって・...において・...として更加礼貌的说法)
 
-<audio controls src="/assets/audio/38 曲目 38.mp3" title="38" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/38 曲目 38.mp3" title="38" style="width: 100%;"></audio>
 
 ![alt text](image-11.png)
 
@@ -448,7 +448,7 @@
 - {V / AN /AI / N} どころか:  别说…连…、哪里…反而…, 表示从根本上进行否定
 - {V} ようでは / ようじゃ: 继续...的话不会有好结果
 
-<audio controls src="/assets/audio/42 曲目 42.mp3" title="42" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/42 曲目 42.mp3" title="42" style="width: 100%;"></audio>
 
 ![alt text](image-12.png)
 
@@ -477,7 +477,7 @@
 - {V} くらいなら：与其...(不如...)
 - {V} まし：比...好
 
-<audio controls src="/assets/audio/43 曲目 43.mp3" title="43" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/43 曲目 43.mp3" title="43" style="width: 100%;"></audio>
 
 ![alt text](image-13.png)
 
@@ -503,7 +503,7 @@
 - {V / N} につけ / につけては / につけても: 每当…(就…)
 - {V / ANな / AI /Nの} わりには：虽然…(但是…), 割に⇒わりに
 
-<audio controls src="/assets/audio/48 曲目 48.mp3" title="48" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/48 曲目 48.mp3" title="48" style="width: 100%;"></audio>
 
 ![alt text](image-14.png)
 
@@ -528,7 +528,7 @@
 - {V / AI / N} やら {V / AI / N} やら：又是…又是…
 - {Vた} かと思うと / かと思ったら：原以为…却…(情况极具变化);刚...就...
 
-<audio controls src="/assets/audio/49 曲目 49.mp3" title="49" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/49 曲目 49.mp3" title="49" style="width: 100%;"></audio>
 
 ![alt text](image-15.png)
 
@@ -563,7 +563,7 @@
 - {V / AN / AI / N} だけ / だけあって / だけに / だけのことはある: 正因为...
 - {V / AI / AN(である) / N(である)} にしても / にせよ / にしろ {V / AI / AN(である) / N(である)} にしても / にせよ / にしろ：无论…还是…(都…)
 
-<audio controls src="/assets/audio/54 曲目 54.mp3" title="54" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/54 曲目 54.mp3" title="54" style="width: 100%;"></audio>
 
 ![alt text](image-16.png)
 
@@ -593,7 +593,7 @@
 - {V连用 / N} がちだ / がちの / がちな: 经常会…, 有…的倾向, 勝ち[がち]
 - {V连用} つつ(も): 虽然…(但是…)
 
-<audio controls src="/assets/audio/57 曲目 57.mp3" title="57" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/57 曲目 57.mp3" title="57" style="width: 100%;"></audio>
 
 ![alt text](image-17.png)
 
@@ -623,7 +623,7 @@
 - {Vた / Nの} 上で(の)：在...之后(正式)
 - {N} にこたえて / にこたえ: 响应…
 
-<audio controls src="/assets/audio/58 曲目 58.mp3" title="58" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/58 曲目 58.mp3" title="58" style="width: 100%;"></audio>
 
 ![alt text](image-18.png)
 
@@ -652,7 +652,7 @@
 - {V意志} か {V} まいか: ...还是不...
 - {Vた / Nの} 末に/末の：经过…最后(…), 末[すえ]
 
-<audio controls src="/assets/audio/63 曲目 63.mp3" title="63" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/63 曲目 63.mp3" title="63" style="width: 100%;"></audio>
 
 ![alt text](image-19.png)
 
@@ -685,7 +685,7 @@
 - {N}も{Vば / AIば / ANなら / Nなら}{N}も{V}: 既…又…
 - {V连用} 抜く: (克服困难)…到底
 
-<audio controls src="/assets/audio/64 曲目 64.mp3" title="64" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/64 曲目 64.mp3" title="64" style="width: 100%;"></audio>
 
 ![alt text](image-20.png)
 
@@ -723,6 +723,6 @@
 - {N} に基づいて / に基づき / に基づく / に基づいた: 根据..., 基[もと]づく: 基于
 - {Vて} こそ：正因为...
 
-<audio controls src="/assets/audio/68 曲目 68.mp3" title="68" style="width: 100%;"></audio>
+<audio controls src="/assets/audio/TRYN2/68 曲目 68.mp3" title="68" style="width: 100%;"></audio>
 
 ![alt text](image-21.png)
