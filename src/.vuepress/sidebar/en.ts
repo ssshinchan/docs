@@ -25,22 +25,11 @@ export const enSidebar = sidebar({
       collapsible: true,
     },
     {
-      text: "Demo",
-      icon: "laptop-code",
-      prefix: "demo/",
-      link: "demo/",
+      text:"Examination",
+      icon:"book",
+      prefix:"examination/",
       children: "structure",
-    },
-    {
-      text: "Docs",
-      icon: "book",
-      prefix: "guide/",
-      children: "structure",
-    },
-    {
-      text: "Slides",
-      icon: "person-chalkboard",
-      link: "https://plugin-md-enhance.vuejs.press/guide/content/revealjs/demo.html",
-    },
+      collapsible: true,
+    }
   ],
 });
