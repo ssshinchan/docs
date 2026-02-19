@@ -4,6 +4,13 @@ export const enSidebar = sidebar({
   "/": [
     "",
     {
+      text: "Job",
+      icon: "book",
+      prefix: "job/",
+      children: "structure",
+      collapsible: true,
+    },
+    {
       text: "Question",
       icon: "book",
       prefix: "question/",
@@ -30,6 +37,6 @@ export const enSidebar = sidebar({
       prefix:"examination/",
       children: "structure",
       collapsible: true,
-    }
+    },
   ],
 });
