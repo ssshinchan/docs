@@ -3,6 +3,7 @@ node_modules/
 src/.vuepress/.cache/
 src/.vuepress/.temp/
 src/.vuepress/dist/
+src/job/reference
 .history/
 .idea/
 .vscode/
