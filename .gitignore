@@ -8,3 +8,4 @@ src/job/reference
 .idea/
 .vscode/
 *.iml
+nul
