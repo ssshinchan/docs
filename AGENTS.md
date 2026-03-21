@@ -35,14 +35,21 @@ src/job: 就职活动目录
 
 ### 面试问题
 
-src/job/interview:面试问题和回答  
-src/job/interview/general.md:所有公司通用的面试问题和回答
+[面试问题和回答](src/job/interview)  
+[所有公司通用的面试问题和回答](src/job/interview/general.md)
 
 作为面试者我的日文要用JLPT N3水平的语言表达,使用敬语  
 作为面试官,问题都要用敬语
 
-回答按点列出,每个点用关键短句概括回答(方便记忆),后面跟详细的解释和例子  
 使用Situation, Task, Action, Result (STAR)方法来组织回答
+紧扣ISTJ性格回答
+回答按点列出,每个点用关键短句概括回答(方便记忆),后面跟详细的解释和例子,模板:
+```markdown
+- 要点A,若干关键词:详细说明A
+- 要点B,若干关键词:详细说明B
+- 要点C,若干关键词:详细说明C
+```
+
 
 
 
