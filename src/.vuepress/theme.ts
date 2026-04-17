@@ -9,7 +9,9 @@ export default hopeTheme({
     name: "NULL"
   },
 
-  headerDepth: 5,
+  toc: {
+    levels: [1, 5],
+  },
 
   logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
