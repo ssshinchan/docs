@@ -1,4 +1,4 @@
-# 项目介绍
+# 项目
 
 ## 考试
 
@@ -31,11 +31,13 @@
 
 ## 日本就职活动
 
+除非我明确要求，否则绝对不要修改已有的语句结构、用词顺序或语义，即使是为了语法优化。
+
 src/job: 就职活动目录
 
 参考资料(直接访问URL获取网页信息):  
 [日文简历](src/job/reference/resume.md)    
-[个人信息](src/job/reference/personal_info.md)
+[个人信息](src/job/reference/personal-info.md)
 
 ### 面试问题
 
