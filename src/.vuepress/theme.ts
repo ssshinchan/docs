@@ -38,6 +38,7 @@ export default hopeTheme({
   encrypt: {
     config: {
       "/job/": [password],
+      "/japanese/fuuzoku.html": [password],
     },
   },
 
