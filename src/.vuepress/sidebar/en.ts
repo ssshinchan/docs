@@ -4,9 +4,9 @@ export const enSidebar = sidebar({
   "/": [
     "",
     {
-      text: "Job",
+      text: "Book",
       icon: "book",
-      prefix: "job/",
+      prefix: "book/",
       children: "structure",
       collapsible: true,
     },
