@@ -1,1 +1,10 @@
 // place your custom styles here
+
+// Indent TOC entries according to their actual Markdown heading hierarchy.
+#toc .vp-toc-link {
+  padding-inline-start: 0;
+}
+
+#toc .vp-toc-list .vp-toc-list {
+  padding-inline-start: 0.5rem;
+}

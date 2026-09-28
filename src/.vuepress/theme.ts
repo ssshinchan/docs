@@ -1,6 +1,6 @@
 import { hopeTheme } from "vuepress-theme-hope";
-import { enNavbar} from "./navbar/index.js";
-import { enSidebar} from "./sidebar/index.js";
+import { enNavbar, jaNavbar } from "./navbar/index.js";
+import { enSidebar, jaSidebar } from "./sidebar/index.js";
 
 const password = process.env.PASSWORD || "";
 
@@ -31,6 +31,15 @@ export default hopeTheme({
 
       metaLocales: {
         editLink: "Edit this page on GitHub",
+      },
+    },
+    "/ja/": {
+      navbar: jaNavbar,
+      sidebar: jaSidebar,
+      footer: "技術ドキュメント",
+      displayFooter: true,
+      metaLocales: {
+        editLink: "GitHubでこのページを編集",
       },
     },
   },

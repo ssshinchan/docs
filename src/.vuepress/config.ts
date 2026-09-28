@@ -11,6 +11,11 @@ export default defineUserConfig({
       title: "Docs",
       description: "Docs",
     },
+    "/ja/": {
+      lang: "ja-JP",
+      title: "Docs",
+      description: "技術ドキュメント",
+    },
   },
 
   theme,
@@ -20,7 +25,7 @@ export default defineUserConfig({
 
   markdown: {
     headers: {
-      level: [2, 3, 4, 5, 6],
+      level: [1, 2, 3, 4, 5, 6],
     },
   },
 });
