@@ -1117,30 +1117,6 @@ MySQL中的锁，按照锁的粒度分，分为以下三类：
 
 其典型的使用场景是做全库的逻辑备份，对所有的表进行锁定，从而获取一致性视图，保证数据的完整性。
 
-为什么全库逻辑备份，就需要加全就锁呢？
-
-1. 我们一起先来分析一下不加全局锁，可能存在的问题。
-
-假设在数据库中存在这样三张表: tb_stock 库存表，tb_order 订单表，tb_orderlog 订单日志表。
-
-![](assets/media/image87.png)
-
-- 在进行数据备份时，先备份了tb_stock库存表。
-- 然后接下来，在业务系统中，执行了下单操作，扣减库存，生成订单（更新tb_stock表，插入tb_order表）。
-- 然后再执行备份 tb_order表的逻辑。
-- 业务中执行插入订单日志操作。
-- 最后，又备份了tb_orderlog表。
-
-此时备份出来的数据，是存在问题的。因为备份出来的数据，tb_stock表与tb_order表的数据不一致(有最新操作的订单信息,但是库存数没减)。
-
-那如何来规避这种问题呢? 此时就可以借助于MySQL的全局锁来解决。
-
-B. 再来分析一下加了全局锁后的情况
-
-![](assets/media/image88.png)
-
-对数据库进行进行逻辑备份之前，先对整个数据库加上全局锁，一旦加了全局锁之后，其他的DDL、DML全部都处于阻塞状态，但是可以执行DQL语句，也就是处于只读状态，而数据备份就是查询操作。那么数据在进行逻辑备份的过程中，数据库中的数据就是不会发生变化的，这样就保证了数据的一致性和完整性。
-
 1). 加全局锁
 
 ```sql
@@ -1149,9 +1125,9 @@ flush tables with read lock;
 
 2). 数据备份
 
-mysqldump -uroot –p1234 itcast \> itcast.sql
-
-数据备份的相关指令, 在后面MySQL管理章节, 还会详细讲解.
+```bash
+mysqldump -uroot –p1234 itcast > itcast.sql
+```
 
 3). 释放锁
 
@@ -1166,17 +1142,13 @@ unlock tables;
 
 在InnoDB引擎中，我们可以在备份时加上参数 --single-transaction 参数来完成不加锁的一致性数据备份。
 
-mysqldump --single-transaction -uroot –p123456 itcast \> itcast.sql
+```bash
+mysqldump --single-transaction -uroot –p123456 itcast > itcast.sql
+```
 
 ## 表级锁
 
 表级锁，每次操作锁住整张表。锁定粒度大，发生锁冲突的概率最高，并发度最低。应用在MyISAM、InnoDB、BDB等存储引擎中。
-
-对于表级锁，主要分为以下三类：
-
-- 表锁
-- 元数据锁（meta data lock，MDL）
-- 意向锁
 
 ### 表锁
 
@@ -1190,15 +1162,7 @@ mysqldump --single-transaction -uroot –p123456 itcast \> itcast.sql
 - 加锁：lock tables 表名... read/write。
 - 释放锁：unlock tables / 客户端断开连接 。
 
-![](assets/media/image89.png)
-
-![](assets/media/image90.png)
-
-![](assets/media/image91.png)
-
-![](assets/media/image92.png)
-
-结论: 读锁不会阻塞其他客户端的读，但是会阻塞写。写锁既会阻塞其他客户端的读，又会阻塞其他客户端的写。
+读锁不会阻塞其他客户端的读，但是会阻塞写。写锁既会阻塞其他客户端的读，又会阻塞其他客户端的写。
 
 ### 元数据锁
 
@@ -1232,9 +1196,15 @@ MDL加锁过程是系统自动控制，无需显式使用，在访问一张表�
 
 ```sql
 select object_type,object_schema,object_name,lock_type,lock_duration from performance_schema.metadata_locks ;
+mysql> select object_type,object_schema,object_name,lock_type,lock_duration
+    -> from performance_schema.metadata_locks;
++-------------+--------------------+----------------+-------------+---------------+
+| object_type | object_schema      | object_name    | lock_type   | lock_duration |
++-------------+--------------------+----------------+-------------+---------------+
+| TABLE       | db01               | score          | SHARED_READ | TRANSACTION   |
+| TABLE       | performance_schema | metadata_locks | SHARED_READ | TRANSACTION   |
++-------------+--------------------+----------------+-------------+---------------+
 ```
-
-![](assets/media/image95.png)
 
 ### 意向锁
 
@@ -1251,31 +1221,16 @@ select object_type,object_schema,object_name,lock_type,lock_duration from perfor
 ![](assets/media/image97.png)
 
 - 意向共享锁(IS): 由语句select ... lock in share mode添加。与表锁共享锁(read)兼容，与表锁排他锁(write)互斥。
-
-<!-- -->
-
 - 意向排他锁(IX): 由insert、update、delete、select...for update添加。与表锁共享锁(read)及排他锁(write)都互斥，意向锁之间不会互斥。
 
 
-|                                                        |
-| ------------------------------------------------------ |
-| 一旦事务提交了，意向共享锁、意向排他锁，都会自动释放。 |
+>一旦事务提交了，意向共享锁、意向排他锁，都会自动释放。
 
 可以通过以下SQL，查看意向锁及行锁的加锁情况：
 
 ```sql
 select object_schema,object_name,index_name,lock_type,lock_mode,lock_data from performance_schema.data_locks;
 ```
-
-演示：
-
-A. 意向共享锁与表读锁是兼容的
-
-![](assets/media/image98.png)
-
-B. 意向排他锁与表读锁、写锁都是互斥的
-
-![](assets/media/image99.png)
 
 ## 行级锁
 
