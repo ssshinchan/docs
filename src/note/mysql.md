@@ -131,11 +131,11 @@ flowchart LR
 - 聚集索引的叶子节点下挂的是这一行的数据 。
 - 二级索引的叶子节点下挂的是该字段值对应的主键值。
 
-![](assets/media/image10.png)
+![](../question/database/assets/media/image10.png)
 
 接下来，我们来分析一下，当我们执行如下的SQL语句时，具体的查找过程是什么样子的。
 
-![](assets/media/image11.png)
+![](../question/database/assets/media/image11.png)
 
 具体过程如下:
 
@@ -177,7 +177,7 @@ DROP INDEX index_name ON table_name;
 SHOW GLOBAL STATUS LIKE 'Com_______';
 ```
 
-![](assets/media/image13.png)
+![](../question/database/assets/media/image13.png)
 
 Com_delete: 删除次数
 
@@ -222,7 +222,7 @@ systemctl restart mysqld
 
 然后，再次查看开关情况，慢查询日志就已经打开了。
 
-![](assets/media/image15.png)
+![](../question/database/assets/media/image15.png)
 
 ### profile详情
 
@@ -351,7 +351,7 @@ EXPLAIN SELECT 字段列表 FROM 表名 WHERE 条件 ;
 
 以 tb_user 表为例，我们先来查看一下之前 tb_user 表所创建的索引。
 
-![](assets/media/image19.png)
+![](../question/database/assets/media/image19.png)
 
 在 tb_user 表中，有一个联合索引，这个联合索引涉及到三个字段，顺序分别为：profession，age，status。
 
@@ -450,7 +450,7 @@ mysql> explain select * from tb_user where profession = '软件工程' and age >
 
 在tb_user表中，除了前面介绍的联合索引之外，还有一个索引，是phone字段的单列索引。
 
-![](assets/media/image28.png)
+![](../question/database/assets/media/image28.png)
 
 ```sql
 mysql> explain select * from tb_user where substring(phone,10,2) = '15';
@@ -709,25 +709,25 @@ mysql> explain select * from tb_user where profession = '软件工程' and age =
 
 A. 表结构及索引示意图:
 
-![](assets/media/image44.png)
+![](../question/database/assets/media/image44.png)
 
 id是主键，是一个聚集索引。 name字段建立了普通索引，是一个二级索引（辅助索引）。
 
 B. 执行SQL : select \* from tb_user where id = 2;
 
-![](assets/media/image45.png)
+![](../question/database/assets/media/image45.png)
 
 根据id查询，直接走聚集索引查询，一次索引扫描，直接返回数据，性能高。
 
 C. 执行SQL：selet id,name from tb_user where name = 'Arm';
 
-![](assets/media/image46.png)
+![](../question/database/assets/media/image46.png)
 
 虽然是根据name字段查询，查询二级索引，但是由于查询返回在字段为 id，name，在name的二级索引中，这两个值都是可以直接获取到的，因为覆盖索引，所以不需要回表查询，性能高。
 
 D. 执行SQL：selet id,name,gender from tb_user where name = 'Arm';
 
-![](assets/media/image47.png)
+![](../question/database/assets/media/image47.png)
 
 由于在name的二级索引中，不包含gender，所以，需要两次索引扫描，也就是需要回表查询，性能相对较差一点。
 
@@ -760,7 +760,7 @@ select count(distinct substring(email,1,5)) / count(*) from tb_user;
 
 3). 前缀索引的查询流程
 
-![](assets/media/image49.png)
+![](../question/database/assets/media/image49.png)
 
 ### 单列索引与联合索引
 
@@ -794,7 +794,7 @@ mysql> explain select id,phone,name from tb_user use index(idx_user_phone_name) 
 
 如果查询使用的是联合索引，具体的结构示意图如下：
 
-![](assets/media/image53.png)
+![](../question/database/assets/media/image53.png)
 
 ## 索引设计原则
 
@@ -840,7 +840,7 @@ commit;
 
 - 如果一次性需要插入大批量数据(比如: 几百万的记录)，使用insert语句插入性能较低，此时可以使用MySQL数据库提供的load指令进行插入。操作如下：
 
-![](assets/media/image54.png)
+![](../question/database/assets/media/image54.png)
 
 可以执行如下指令，将数据脚本文件中的数据加载到表结构中：
 
@@ -861,11 +861,11 @@ load data local infile '/root/sql1.log' into table tb_user fields terminated by 
 
 在InnoDB存储引擎中，表数据都是根据主键顺序组织存放的，这种存储方式的表称为索引组织表(index organized table IOT)。
 
-![](assets/media/image55.png)
+![](../question/database/assets/media/image55.png)
 
 行数据，都是存储在聚集索引的叶子节点上的。而我们之前也讲解过InnoDB的逻辑结构图：
 
-![](assets/media/image56.png)
+![](../question/database/assets/media/image56.png)
 
 在InnoDB引擎中，数据行是记录在逻辑结构 page 页中的，而每一个页的大小是固定的，默认16K。那也就意味着， 一个页中所存储的行也是有限的，如果插入的数据行row在该页存储不小，将会存储到下一个页中，页与页之间会通过指针连接。
 
@@ -877,47 +877,47 @@ A. 主键顺序插入效果
 
 ①. 从磁盘中申请页， 主键顺序插入
 
-![](assets/media/image57.png)
+![](../question/database/assets/media/image57.png)
 
 ②. 第一个页没有满，继续往第一页插入
 
-![](assets/media/image58.png)
+![](../question/database/assets/media/image58.png)
 
 ③. 当第一个也写满之后，再写入第二个页，页与页之间会通过指针连接
 
-![](assets/media/image59.png)
+![](../question/database/assets/media/image59.png)
 
 4. . 当第二页写满了，再往第三页写入
 
-![](assets/media/image60.png)
+![](../question/database/assets/media/image60.png)
 
 B. 主键乱序插入效果
 ①. 加入1#,2#页都已经写满了，存放了如图所示的数据
-![](assets/media/image61.png)
+![](../question/database/assets/media/image61.png)
 
 ②. 此时再插入id为50的记录，我们来看看会发生什么现象
 
 会再次开启一个页，写入新的页中吗？
 
-![](assets/media/image62.png)
+![](../question/database/assets/media/image62.png)
 
 不会。因为，索引结构的叶子节点是有顺序的。按照顺序，应该存储在47之后。
 
-![](assets/media/image63.png)
+![](../question/database/assets/media/image63.png)
 
 但是47所在的1#页，已经写满了，存储不了50对应的数据了。那么此时会开辟一个新的页3#。
 
-![](assets/media/image64.png)
+![](../question/database/assets/media/image64.png)
 
 但是并不会直接将50存入3#页，而是会将1#页后一半的数据，移动到3#页，然后在3#页，插入50。
 
-![](assets/media/image65.png)
+![](../question/database/assets/media/image65.png)
 
-![](assets/media/image66.png)
+![](../question/database/assets/media/image66.png)
 
 移动数据，并插入id为50的数据之后，那么此时，这三个页之间的数据顺序是有问题的。1#的下一个页，应该是3#， 3#的下一个页是2#。 所以，此时，需要重新设置链表指针。
 
-![](assets/media/image67.png)
+![](../question/database/assets/media/image67.png)
 
 上述的这种现象，称之为 "页分裂"，是比较耗费性能的操作。
 
@@ -925,27 +925,27 @@ B. 主键乱序插入效果
 
 目前表中已有数据的索引结构(叶子节点)如下：
 
-![](assets/media/image68.png)
+![](../question/database/assets/media/image68.png)
 
 当我们对已有数据进行删除时，具体的效果如下:
 
 当删除一行记录时，实际上记录并没有被物理删除，只是记录被标记（flaged）为删除并且它的空间变得允许被其他记录声明使用。
 
-![](assets/media/image69.png)
+![](../question/database/assets/media/image69.png)
 
 当我们继续删除2#的数据记录
 
-![](assets/media/image70.png)
+![](../question/database/assets/media/image70.png)
 
 当页中删除的记录达到 MERGE_THRESHOLD（默认为页的50%），InnoDB会开始寻找最靠近的页（前或后）看看是否可以将两个页合并以优化空间使用。
 
-![](assets/media/image71.png)
+![](../question/database/assets/media/image71.png)
 
-![](assets/media/image72.png)
+![](../question/database/assets/media/image72.png)
 
 删除数据，并将页合并之后，再次插入新的数据21，则直接插入3#页
 
-![](assets/media/image73.png)
+![](../question/database/assets/media/image73.png)
 
 > MERGE_THRESHOLD：合并页的阈值，可以自己设置，在创建表或者创建索引时指定。 |
 
@@ -1091,9 +1091,9 @@ mysql> explain select id,age,phone from tb_user order by age asc, phone desc;
 
 升序/降序联合索引结构图示:
 
-![](assets/media/image85.png)
+![](../question/database/assets/media/image85.png)
 
-![](assets/media/image86.png)
+![](../question/database/assets/media/image86.png)
 
 由上述的测试,我们得出order by优化原则:
 
@@ -1254,11 +1254,11 @@ MDL加锁过程是系统自动控制，无需显式使用，在访问一张表�
 
 当执行SELECT、INSERT、UPDATE、DELETE等语句时，添加的是元数据共享锁（SHARED_READ /SHARED_WRITE），之间是兼容的。
 
-![](assets/media/image93.png)
+![](../question/database/assets/media/image93.png)
 
 当执行SELECT语句时，添加的是元数据共享锁（SHARED_READ），会阻塞元数据排他锁（EXCLUSIVE），之间是互斥的。
 
-![](assets/media/image94.png)
+![](../question/database/assets/media/image94.png)
 
 我们可以通过下面的SQL，来查看数据库中的元数据锁的情况：
 
@@ -1282,11 +1282,11 @@ mysql> select object_type,object_schema,object_name,lock_type,lock_duration
 
 客户端一，在执行DML操作时，会对涉及的行加行锁，同时也会对该表加上意向锁。
 
-![](assets/media/image96.png)
+![](../question/database/assets/media/image96.png)
 
 而其他客户端，在对这张表加表锁的时候，会根据该表上所加的意向锁来判定是否可以成功加表锁，而不用逐行判断行锁情况了。
 
-![](assets/media/image97.png)
+![](../question/database/assets/media/image97.png)
 
 - 意向共享锁(IS): 由语句select ... lock in share mode添加。与表锁共享锁(read)兼容，与表锁排他锁(write)互斥。
 - 意向排他锁(IX): 由insert、update、delete、select...for update添加。与表锁共享锁(read)及排他锁(write)都互斥，意向锁之间不会互斥。
@@ -1307,15 +1307,15 @@ InnoDB的数据是基于索引组织的，行锁是通过对索引上的索引�
 
 - 行锁（Record Lock）：锁定单个行记录的锁，防止其他事务对此行进行update和delete。在RC、RR隔离级别下都支持。
 
-![](assets/media/image100.png)
+![](../question/database/assets/media/image100.png)
 
 - 间隙锁（Gap Lock）：锁定索引记录间隙（不含该记录），确保索引记录间隙不变，防止其他事务在这个间隙进行insert，产生幻读。在RR隔离级别下都支持。
 
-![](assets/media/image101.png)
+![](../question/database/assets/media/image101.png)
 
 - 临键锁（Next-Key Lock）：**行锁和间隙锁组合**，同时锁住数据，并锁住数据前面的间隙Gap。在RR隔离级别下支持。
 
-![](assets/media/image102.png)
+![](../question/database/assets/media/image102.png)
 
 ### 行锁
 
@@ -1363,33 +1363,33 @@ INSERT INTO `stu` VALUES (25, 'luci', 25);
 
 A. 普通的select语句，执行时，不会加锁。
 
-![](assets/media/image103.png)
+![](../question/database/assets/media/image103.png)
 
 B. select...lock in share mode，加共享锁，共享锁与共享锁之间兼容。
 
-![](assets/media/image104.png)
+![](../question/database/assets/media/image104.png)
 
 共享锁与排他锁之间互斥。
 
-![](assets/media/image105.png)
+![](../question/database/assets/media/image105.png)
 
 客户端一获取的是id为1这行的共享锁，客户端二是可以获取id为3这行的排它锁的，因为不是同一行数据。 而如果客户端二想获取id为1这行的排他锁，会处于阻塞状态，以为共享锁与排他锁之间互斥。
 
 C. 排它锁与排他锁之间互斥
 
-![](assets/media/image106.png)
+![](../question/database/assets/media/image106.png)
 
 当客户端一，执行update语句，会为id为1的记录加排他锁； 客户端二，如果也执行update语句更新id为1的数据，也要为id为1的数据加排他锁，但是客户端二会处于阻塞状态，因为排他锁之间是互斥的。 直到客户端一，把事务提交了，才会把这一行的行锁释放，此时客户端二，解除阻塞。
 
 D. 无索引行锁升级为表锁
 
-![](assets/media/image107.png)
+![](../question/database/assets/media/image107.png)
 
 客户端一，根据name字段进行更新时，name字段是没有索引的，如果没有索引，此时行锁会升级为表锁(因为行锁是对索引项加的锁，而name没有索引)。
 
 接下来，我们再针对name字段建立索引，索引建立之后，再次做一个测试：
 
-![](assets/media/image108.png)
+![](../question/database/assets/media/image108.png)
 
 此时我们可以看到，客户端一，开启事务，然后依然是根据name进行更新。而客户端二，在更新id为3的数据时，更新成功，并未进入阻塞状态。这样就说明，我们根据索引字段进行更新操作，就可以避免行锁升级为表锁的情况。
 
@@ -1405,19 +1405,19 @@ D. 无索引行锁升级为表锁
 
 A. 索引上的等值查询(唯一索引)，给不存在的记录加锁时, 优化为间隙锁 。
 
-![](assets/media/image109.png)
+![](../question/database/assets/media/image109.png)
 
 B. 索引上的等值查询(非唯一普通索引)，向右遍历时最后一个值不满足查询需求时，next-key lock 退化为间隙锁。
 
 我们知道InnoDB的B+树索引，叶子节点是有序的双向链表。假如，我们要根据这个二级索引查询值为18的数据，并加上共享锁，我们是只锁定18这一行就可以了吗？并不是，因为是非唯一索引，这个结构中可能有多个18的存在，所以，在加锁时会继续往后找，找到一个不满足条件的值（当前案例中也就是29）。此时会对18加临键锁，并对29之前的间隙加锁。
 
-![](assets/media/image110.png)
+![](../question/database/assets/media/image110.png)
 
-![](assets/media/image111.png)
+![](../question/database/assets/media/image111.png)
 
 C. 索引上的范围查询(唯一索引) -- 会访问到不满足条件的第一个值为止。
 
-![](assets/media/image112.png)
+![](../question/database/assets/media/image112.png)
 
 查询的条件为id\>=19，并添加共享锁。 此时我们可以根据数据库表中现有的数据，将数据分为三个部分：
 
@@ -1433,7 +1433,7 @@ C. 索引上的范围查询(唯一索引) -- 会访问到不满足条件的第�
 
 ## 逻辑存储结构
 
-![](assets/media/image113.png)
+![](../question/database/assets/media/image113.png)
 
 1). 表空间
 
@@ -1468,7 +1468,7 @@ InnoDB 存储引擎每次从磁盘申请 4-5 个区。
 
 测试：
 
-![](assets/media/image114.png)
+![](../question/database/assets/media/image114.png)
 
 在测试中我们可以看到，即使是在默认的RR隔离级别下，事务A中依然可以读取到事务B最新提交的内容，因为在查询语句后面加上了 lock in share mode 共享锁，此时是当前读操作。当然，当我们加排他锁的时候，也是当前读操作。
 
@@ -1482,7 +1482,7 @@ InnoDB 存储引擎每次从磁盘申请 4-5 个区。
 
 测试:
 
-![](assets/media/image115.png)
+![](../question/database/assets/media/image115.png)
 
 在测试中,我们看到即使事务B提交了数据,事务A中也查询不到。 原因就是因为普通的select是快照读，而在当前默认的RR隔离级别下，开启事务后第一个select语句才是快照读的地方，后面执行相同的select语句都是从快照中获取数据，可能不是当前的最新数据，这样也就保证了可重复读。
 
@@ -1519,7 +1519,7 @@ ibd2sdi stu.ibd
 
 查看到的表结构信息中，有一栏 columns，在其中我们会看到处理我们建表时指定的字段以外，还有额外的两个字段 分别是：DB_TRX_ID 、 DB_ROLL_PTR ，因为该表有主键，所以没有DB_ROW_ID隐藏字段。
 
-![](assets/media/image117.png)![](assets/media/image118.png)
+![](../question/database/assets/media/image117.png)![](../question/database/assets/media/image118.png)
 
 2). 查看没有主键的表 employee
 
@@ -1535,7 +1535,7 @@ ibd2sdi employee.ibd
 
 查看到的表结构信息中，有一栏 columns，在其中我们会看到处理我们建表时指定的字段以外，还有额外的三个字段 分别是：DB_TRX_ID 、 DB_ROLL_PTR 、DB_ROW_ID，因为employee表是没有指定主键的。
 
-![](assets/media/image119.png)![](assets/media/image120.png)![](assets/media/image121.png)
+![](../question/database/assets/media/image119.png)![](../question/database/assets/media/image120.png)![](../question/database/assets/media/image121.png)
 
 ### undolog
 
@@ -1577,7 +1577,7 @@ A. 第一步
 
 当事务2执行第一条修改语句时，会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针，回滚指针用来指定如果发生回滚，回滚到哪一个版本。
 
-![](assets/media/image124.png)
+![](../question/database/assets/media/image124.png)
 
 B.第二步
 
@@ -1598,7 +1598,7 @@ B.第二步
 
 当事务3执行第一条修改语句时，也会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针，回滚指针用来指定如果发生回滚，回滚到哪一个版本。
 
-![](assets/media/image126.png)
+![](../question/database/assets/media/image126.png)
 
 C. 第三步
 
@@ -1619,7 +1619,7 @@ C. 第三步
 
 当事务4执行第一条修改语句时，也会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针，回滚指针用来指定如果发生回滚，回滚到哪一个版本。
 
-![](assets/media/image128.png)
+![](../question/database/assets/media/image128.png)
 
 最终我们发现，不同事务或相同事务对同一条记录进行修改，会导致该记录的undolog生成一条记录版本链表，链表的头部是最新的旧记录，链表尾部是最早的旧记录。
 
@@ -1665,49 +1665,49 @@ RC隔离级别下，在事务中每一次执行快照读时生成ReadView。
 
 在事务5中，查询了两次id为30的记录，由于隔离级别为Read Committed，所以每一次进行快照读 都会生成一个ReadView，那么两次生成的ReadView如下。
 
-![图像 1204](assets/media/1204.png)
+![图像 1204](../question/database/assets/media/1204.png)
 
 那么这两次快照读在获取数据时，就需要根据所生成的ReadView以及ReadView的版本链访问规则， 到undolog版本链中匹配数据，最终决定此次快照读返回的数据。
 
 **A. 先来看第一次快照读具体的读取过程：**
 
-![图像 1205](assets/media/1205.png)
+![图像 1205](../question/database/assets/media/1205.png)
 
-![图像 1206](assets/media/1206.png)
+![图像 1206](../question/database/assets/media/1206.png)
 
 在进行匹配时，会从undo log的版本链，从上到下进行挨个匹配：
 
-![图像 1207](assets/media/1207.png)
+![图像 1207](../question/database/assets/media/1207.png)
 
 先匹配 这条记录，这条记录对应的
 
 trx_id为4，也就是将4带入右侧的匹配规则中。 ①不满足 ②不满足 ③不满足 ④也不满足 ， 都不满足，则继续匹配undo log版本链的下一条。
 
-![图像 1208](assets/media/1208.png)
+![图像 1208](../question/database/assets/media/1208.png)
 
 再匹配第二条 ，这条
 
 记录对应的trx_id为3，也就是将3带入右侧的匹配规则中。①不满足 ②不满足 ③不满足 ④也 不满足 ，都不满足，则继续匹配undo log版本链的下一条。
 
-![图像 1209](assets/media/1209.png)
+![图像 1209](../question/database/assets/media/1209.png)
 
 再匹配第三条 ，这条记 录对应的trx_id为2，也就是将2带入右侧的匹配规则中。①不满足 ②满足 终止匹配，此次快照 读，返回的数据就是版本链中记录的这条数据。
 
 **B. 再来看第二次快照读具体的读取过程:**
 
-![图像 1210](assets/media/1210.png)
+![图像 1210](../question/database/assets/media/1210.png)
 
-![图像 1211](assets/media/1211.png)
+![图像 1211](../question/database/assets/media/1211.png)
 
 在进行匹配时，会从undo log的版本链，从上到下进行挨个匹配：
 
-![图像 1212](assets/media/1212.png)
+![图像 1212](../question/database/assets/media/1212.png)
 
 先匹配 这条记录，这条记录对应的
 
 trx_id为4，也就是将4带入右侧的匹配规则中。 ①不满足 ②不满足 ③不满足 ④也不满足 ， 都不满足，则继续匹配undo log版本链的下一条。
 
-![图像 1213](assets/media/1213.png)
+![图像 1213](../question/database/assets/media/1213.png)
 
 再匹配第二条 ，这条 记录对应的trx_id为3，也就是将3带入右侧的匹配规则中。①不满足 ②满足 。终止匹配，此次 快照读，返回的数据就是版本链中记录的这条数据。
 
@@ -1717,13 +1717,13 @@ RR隔离级别下，仅在事务中第一次执行快照读时生成ReadView，�
 
 那MySQL是如何做到可重复读的呢? 我们简单分析一下就知道了
 
-![图像 1214](assets/media/1214.png)
+![图像 1214](../question/database/assets/media/1214.png)
 
 我们看到，在RR隔离级别下，只是在事务中第一次快照读时生成ReadView，后续都是复用该 ReadView，那么既然ReadView都一样， ReadView的版本链匹配规则也一样， 那么最终快照读返 回的结果也是一样的。
 
 所以呢，MVCC的实现原理就是通过 InnoDB表的隐藏字段、UndoLog 版本链、ReadView来实现的。 而MVCC + 锁，则实现了事务的隔离性。 而一致性则是由redolog 与 undolog保证。
 
-![图像 1215](assets/media/1215.png)
+![图像 1215](../question/database/assets/media/1215.png)
 
 ## 6.2 架构
 
@@ -1731,11 +1731,11 @@ RR隔离级别下，仅在事务中第一次执行快照读时生成ReadView，�
 
 MySQL5.5 版本开始，默认使用InnoDB存储引擎，它擅长事务处理，具有崩溃恢复特性，在日常开发 中使用非常广泛。下面是InnoDB架构图，左侧为内存结构，右侧为磁盘结构。
 
-![图像 1169](assets/media/1169.png)
+![图像 1169](../question/database/assets/media/1169.png)
 
 ### 6.2.2 内存结构
 
-![图像 1170](assets/media/1170.png)
+![图像 1170](../question/database/assets/media/1170.png)
 
 在左侧的内存结构中，主要分为这么四大块儿： Buffer Pool、Change Buffer、Adaptive Hash Index、Log Buffer。 接下来介绍一下这四个部分。
 
@@ -1757,7 +1757,7 @@ InnoDB存储引擎基于磁盘文件存储，访问物理硬盘和在内存中�
 
 在专用服务器上，通常将多达80％的物理内存分配给缓冲池 。参数设置： show variables like 'innodb_buffer_pool_size';
 
-![图像 1171](assets/media/1171.png)
+![图像 1171](../question/database/assets/media/1171.png)
 
 **2). Change Buffer**
 
@@ -1767,7 +1767,7 @@ Change Buffer的意义是什么呢?
 
 先来看一幅图，这个是二级索引的结构图：
 
-![图像 1172](assets/media/1172.png)
+![图像 1172](../question/database/assets/media/1172.png)
 
 与聚集索引不同，二级索引通常是非唯一的，并且以相对随机的顺序插入二级索引。同样，删除和更新 可能会影响索引树中不相邻的二级索引页，如果每一次都操作磁盘，会造成大量的磁盘IO。有了 ChangeBuffer之后，我们可以在缓冲池中进行合并处理，减少磁盘IO。
 
@@ -1797,13 +1797,13 @@ innodb_flush_log_at_trx_commit：日志刷新到磁盘时机，取值主要包�
 
 2: 日志在每次事务提交后写入，并每秒刷新到磁盘一次。
 
-![图像 1173](assets/media/1173.png)
+![图像 1173](../question/database/assets/media/1173.png)
 
 ### 6.2.3 磁盘结构
 
 接下来，再来看看InnoDB体系结构的右边部分，也就是磁盘结构：
 
-![图像 1174](assets/media/1174.png)
+![图像 1174](../question/database/assets/media/1174.png)
 
 **1). System Tablespace**
 
@@ -1811,7 +1811,7 @@ innodb_flush_log_at_trx_commit：日志刷新到磁盘时机，取值主要包�
 
 参数：innodb_data_file_path
 
-![图像 1175](assets/media/1175.png)
+![图像 1175](../question/database/assets/media/1175.png)
 
 系统表空间，默认的文件名叫 ibdata1。
 
@@ -1821,11 +1821,11 @@ innodb_flush_log_at_trx_commit：日志刷新到磁盘时机，取值主要包�
 
 开关参数：innodb_file_per_table ，该参数默认开启。
 
-![图像 1176](assets/media/1176.png)
+![图像 1176](../question/database/assets/media/1176.png)
 
 那也就是说，我们没创建一个表，都会产生一个表空间文件，如图：
 
-![图像 1177](assets/media/1177.png)
+![图像 1177](../question/database/assets/media/1177.png)
 
 **3). General Tablespaces**
 
@@ -1837,7 +1837,7 @@ innodb_flush_log_at_trx_commit：日志刷新到磁盘时机，取值主要包�
 CREATE TABLESPACE ts_name ADD DATAFILE 'file_name' ENGINE = engine_name;
 ```
 
-![图像 1178](assets/media/1178.png)
+![图像 1178](../question/database/assets/media/1178.png)
 
 **B. 创建表时指定表空间**
 
@@ -1845,7 +1845,7 @@ CREATE TABLESPACE ts_name ADD DATAFILE 'file_name' ENGINE = engine_name;
 CREATE TABLE xxx ... TABLESPACE ts_name;
 ```
 
-![图像 1179](assets/media/1179.png)
+![图像 1179](../question/database/assets/media/1179.png)
 
 **4). Undo Tablespaces**
 
@@ -1859,7 +1859,7 @@ InnoDB 使用会话临时表空间和全局临时表空间。存储用户创建�
 
 双写缓冲区，innoDB引擎将数据页从Buffer Pool刷新到磁盘前，先将数据页写入双写缓冲区文件 中，便于系统异常时恢复数据。
 
-![图像 1180](assets/media/1180.png)
+![图像 1180](../question/database/assets/media/1180.png)
 
 **7). Redo Log**
 
@@ -1867,15 +1867,15 @@ InnoDB 使用会话临时表空间和全局临时表空间。存储用户创建�
 
 以循环方式写入重做日志文件，涉及两个文件：
 
-![图像 1181](assets/media/1181.png)
+![图像 1181](../question/database/assets/media/1181.png)
 
 前面我们介绍了InnoDB的内存结构，以及磁盘结构，那么内存中我们所更新的数据，又是如何到磁盘 中的呢？ 此时，就涉及到一组后台线程，接下来，就来介绍一些InnoDB中涉及到的后台线程。
 
-![图像 1182](assets/media/1182.png)
+![图像 1182](../question/database/assets/media/1182.png)
 
 ### 6.2.4 后台线程
 
-![图像 1183](assets/media/1183.png)
+![图像 1183](../question/database/assets/media/1183.png)
 
 在InnoDB的后台线程中，分为4类，分别是：Master Thread 、IO Thread、Purge Thread、 Page Cleaner Thread。
 
@@ -1903,7 +1903,7 @@ Insert buffer thread 1 负责将写缓冲区内容刷新到磁盘
 show engine innodb status \G;
 ```
 
-![图像 1184](assets/media/1184.png)
+![图像 1184](../question/database/assets/media/1184.png)
 
 **3). Purge Thread**
 
@@ -1933,11 +1933,11 @@ show engine innodb status \G;
 
 那实际上，我们研究事务的原理，就是研究MySQL的InnoDB引擎是如何保证事务的这四大特性的。
 
-![图像 1185](assets/media/1185.png)
+![图像 1185](../question/database/assets/media/1185.png)
 
 而对于这四大特性，实际上分为两个部分。 其中的原子性、一致性、持久化，实际上是由InnoDB中的 两份日志来保证的，一份是redo log日志，一份是undo log日志。 而持久性是通过数据库的锁， 加上MVCC来保证的。
 
-![图像 1186](assets/media/1186.png)
+![图像 1186](../question/database/assets/media/1186.png)
 
 我们在讲解事务原理的时候，主要就是来研究一下redolog，undolog以及MVCC。
 
@@ -1951,11 +1951,11 @@ show engine innodb status \G;
 
 我们知道，在InnoDB引擎中的内存结构中，主要的内存区域就是缓冲池，在缓冲池中缓存了很多的数 据页。 当我们在一个事务中，执行多个增删改的操作时，InnoDB引擎会先操作缓冲池中的数据，如果 缓冲区没有对应的数据，会通过后台线程将磁盘中的数据加载出来，存放在缓冲区中，然后将缓冲池中 的数据修改，修改后的数据页我们称为脏页。 而脏页则会在一定的时机，通过后台线程刷新到磁盘 中，从而保证缓冲区与磁盘的数据一致。 而缓冲区的脏页数据并不是实时刷新的，而是一段时间之后 将缓冲区的数据刷新到磁盘中，假如刷新到磁盘的过程出错了，而提示给用户事务提交成功，而数据却 没有持久化下来，这就出现问题了，没有保证事务的持久性。
 
-![图像 1187](assets/media/1187.png)
+![图像 1187](../question/database/assets/media/1187.png)
 
 那么，如何解决上述的问题呢？ 在InnoDB中提供了一份日志 redo log，接下来我们再来分析一 下，通过redolog如何解决这个问题。
 
-![图像 1188](assets/media/1188.png)
+![图像 1188](../question/database/assets/media/1188.png)
 
 有了redolog之后，当对缓冲区的数据进行增删改之后，会首先将操作的数据页的变化，记录在redo log buffer中。在事务提交时，会将redo log buffer中的数据刷新到redo log磁盘文件中。 过一段时间之后，如果刷新缓冲区的脏页到磁盘时，发生错误，此时就可以借助于redo log进行数据 恢复，这样就保证了事务的持久性。 而如果脏页成功刷新到磁盘 或 或者涉及到的数据已经落盘，此 时redolog就没有作用了，就可以删除了，所以存在的两个redolog文件是循环写的。
 
