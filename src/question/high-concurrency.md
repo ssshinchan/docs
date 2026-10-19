@@ -100,7 +100,7 @@
 
 下图是[《Java 面试指北》](https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247519384&idx=1&sn=bc7e71af75350b755f04ca4178395b1a&chksm=cea1c353f9d64a458f797696d4144b4d6e58639371a4612b8e4d106d83a66d2289e7b2cd7431&token=660789642&lang=zh_CN&scene=21#wechat_redirect) 「高并发篇」中的一篇文章的配图，从图中可以看出，系统的商品服务部署了多份在不同的服务器上，为了实现访问商品服务请求的分流，我们用到了负载均衡。
 
-![img](../system-design/面试指北.assets/9b350f26-1d2e-4764-8d83-2df06f61afb6.png)
+![img](system-design/面试指北.assets/9b350f26-1d2e-4764-8d83-2df06f61afb6.png)
 
 负载均衡是一种比较常用且实施起来较为简单的提高系统并发能力和可靠性的手段，不论是单体架构的系统还是微服务架构的系统几乎都会用到。
 
@@ -116,7 +116,7 @@
 
 下图是我画的一个简单的基于 Nginx 的服务端负载均衡示意图：
 
-![img](../system-design/面试指北.assets/5843341e-b6ae-4f3d-8d10-f9984208e0a1.png)
+![img](system-design/面试指北.assets/5843341e-b6ae-4f3d-8d10-f9984208e0a1.png)
 
 **硬件负载均衡** 通过专门的硬件设备（比如 **F5、A10、Array** ）实现负载均衡功能。
 
@@ -133,7 +133,7 @@
 
 最常见的是四层和七层负载均衡，因此，本文也是重点介绍这两种负载均衡。
 
-![img](../system-design/面试指北.assets/923e3076-de6e-4d9e-aaaa-b48f0736f5ee.png)
+![img](system-design/面试指北.assets/923e3076-de6e-4d9e-aaaa-b48f0736f5ee.png)
 
 - **四层负载均衡** 工作在 OSI 模型第四层，也就是传输层，这一层的主要协议是 TCP/UDP，负载均衡器在这一层能够看到数据包里的源端口地址以及目的端口地址，会基于这些信息通过一定的负载均衡算法将数据包转发到后端真实服务器。
 - **七层负载均衡** 工作在 OSI 模型第七层，也就是应用层，这一层的主要协议是 HTTP 。这一层的负载均衡比四层负载均衡路由网络请求的方式更加复杂，它会读取报文的数据部分（比如说我们的 HTTP 部分的报文），然后根据读取到的数据内容（如 URL、Cookie）做出负载均衡决策。
@@ -144,7 +144,7 @@
 
 在工作中，我们通常会使用 **Nginx** 来做七层负载均衡，LVS(Linux Virtual Server 虚拟服务器， Linux 内核的 4 层负载均衡)来做四层负载均衡。关于 Nginx 的常见知识点总结，[《Java 面试指北》](https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247519384&idx=1&sn=bc7e71af75350b755f04ca4178395b1a&chksm=cea1c353f9d64a458f797696d4144b4d6e58639371a4612b8e4d106d83a66d2289e7b2cd7431&token=660789642&lang=zh_CN&scene=21#wechat_redirect) 中「技术面试题篇」中已经有对应的内容了，感兴趣的小伙伴可以去看看。
 
-![img](../system-design/面试指北.assets/6d7f20f5-6a7c-4b75-a65b-c664c7793b98.png)
+![img](system-design/面试指北.assets/6d7f20f5-6a7c-4b75-a65b-c664c7793b98.png)
 
 不过，LVS 这个绝大部分公司真用不上，像阿里、百度、腾讯、eBay 等大厂才会使用到，用的最多的还是 Nginx。
 
@@ -160,7 +160,7 @@ Java 领域主流的微服务框架 Dubbo、Spring Cloud 等都内置了开箱�
 
 下图是我画的一个简单的基于 Spring Cloud Load Balancer（Ribbon 也类似） 的客户端负载均衡示意图：
 
-![img](../system-design/面试指北.assets/c9319f3b-5227-4b1c-9b0a-293aaa305927.png)
+![img](system-design/面试指北.assets/c9319f3b-5227-4b1c-9b0a-293aaa305927.png)
 
 #### 负载均衡常见的算法有哪些？ 
 
@@ -206,11 +206,11 @@ DNS 解析是比较早期的七层负载均衡实现方式，非常简单。
 
 DNS 解析实现负载均衡的原理是这样的：在 DNS 服务器中为同一个主机记录配置多个 IP 地址，这些 IP 地址对应不同的服务器。当用户请求域名的时候，DNS 服务器采用轮询算法返回 IP 地址，这样就实现了轮询版负载均衡。
 
-![img](../system-design/面试指北.assets/42ee5022-c625-4c6d-99ef-cb98a463aff1.png)
+![img](system-design/面试指北.assets/42ee5022-c625-4c6d-99ef-cb98a463aff1.png)
 
 现在的 DNS 解析几乎都支持 IP 地址的权重配置，这样的话，在服务器性能不等的集群中请求分配会更加合理化。像我自己目前正在用的阿里云 DNS 就支持权重配置。
 
-##### ![img](../system-design/面试指北.assets/c9d995d5-b6cc-4388-ad36-b43cf7e573f3.png)反向代理
+##### ![img](system-design/面试指北.assets/c9d995d5-b6cc-4388-ad36-b43cf7e573f3.png)反向代理
 
 客户端将请求发送到反向代理服务器，由反向代理服务器去选择目标服务器，获取数据后再返回给客户端。对外暴露的是反向代理服务器地址，隐藏了真实服务器 IP 地址。反向代理“代理”的是目标服务器，这一个过程对于客户端而言是透明的。
 
@@ -218,7 +218,7 @@ Nginx 就是最常用的反向代理服务器，它可以将接收到的客户�
 
 反向代理负载均衡同样属于七层负载均衡。
 
-#### ![img](../system-design/面试指北.assets/3bf9d0c4-b460-4b2c-91bb-2284fe8a5c19.png)客户端负载均衡通常是怎么做的？
+#### ![img](system-design/面试指北.assets/3bf9d0c4-b460-4b2c-91bb-2284fe8a5c19.png)客户端负载均衡通常是怎么做的？
 
 我们上面也说了，客户端负载均衡可以使用现成的负载均衡组件来实现。
 
@@ -228,7 +228,7 @@ Nginx 就是最常用的反向代理服务器，它可以将接收到的客户�
 
 我们早期学习微服务，肯定接触过 Netflix 公司开源的 Feign、Ribbon、Zuul、Hystrix、Eureka 等知名的微服务系统构建所必须的组件，直到现在依然有非常非常多的公司在使用这些组件。不夸张地说，Netflix 公司引领了 Java 技术栈下的微服务发展。
 
-![img](../system-design/面试指北.assets/b2ac43ef-f3d1-44cf-8f11-e398a9dec838.png)
+![img](system-design/面试指北.assets/b2ac43ef-f3d1-44cf-8f11-e398a9dec838.png)
 
 **那为什么 Spring Cloud 这么急着移除 Netflix 的组件呢？** 主要是因为在 2018 年的时候，Netflix 宣布其开源的核心组件 Hystrix、Ribbon、Zuul、Eureka 等进入维护状态，不再进行新特性开发，只修 BUG。于是，Spring 官方不得不考虑移除 Netflix 的组件。
 
@@ -276,7 +276,7 @@ Nginx 就是最常用的反向代理服务器，它可以将接收到的客户�
 
 - **workQueue:** 当新任务来的时候会先判断当前运行的线程数量是否达到核心线程数，如果达到的话，新任务就会被存放在队列中。
 
-![img](../system-design/面试指北.assets/eb286a4d-846b-48b8-881a-39cfdeb577fc.png)
+![img](system-design/面试指北.assets/eb286a4d-846b-48b8-881a-39cfdeb577fc.png)
 
 > 线程池 `ThreadPoolExecutor` 不是上来就是直接初始化 `corePoolSize `个线程，而是有任务来了才创建线程处理任务。
 
@@ -404,11 +404,11 @@ public class TaskQueue extends LinkedBlockingQueue<Runnable> {
 
 ##### **数据库连接池**
 
-![img](../system-design/面试指北.assets/f45c04f4-f2fb-493f-be41-3d7376f7d29f.png)
+![img](system-design/面试指北.assets/f45c04f4-f2fb-493f-be41-3d7376f7d29f.png)
 
 数据库连接池属于连接池，类似于 HTTP、Redis 连接池，它们的实现原理类似。连接池的结构示意图，如下所示（图片来自：[《Java 业务开发常见错误 100 例》](http://gk.link/a/10u4d)）：
 
-![img](../system-design/面试指北.assets/images-166608888908056)
+![img](system-design/面试指北.assets/images-166608888908056.png)
 
 连接池负责连接的管理包括连接的建立、空闲连接回收等工作。
 
@@ -504,7 +504,7 @@ while((n = read(diskfd, buf, BUF_SIZE)) > 0)
 
 流程图如下：
 
-![img](../system-design/面试指北.assets/bceba348-2c09-4f54-9b8f-601267af36ea.png)
+![img](system-design/面试指北.assets/bceba348-2c09-4f54-9b8f-601267af36ea.png)
 
 - 用户应用进程调用 read 函数，向操作系统发起 IO 调用，**上下文从用户态转为内核态（切换 1）**
 - DMA 控制器把数据从磁盘中，读取到内核缓冲区。
@@ -543,7 +543,7 @@ while((n = read(diskfd, buf, BUF_SIZE)) > 0)
 
 > CPU 寄存器里原来用户态的指令位置，需要先保存起来。接着，为了执行内核态代码，CPU 寄存器需要更新为内核态指令的新位置。最后才是跳转到内核态运行内核任务。
 
-![img](../system-design/面试指北.assets/5c24acef-d868-4390-b34e-1a6ff0db56a8.png)
+![img](system-design/面试指北.assets/5c24acef-d868-4390-b34e-1a6ff0db56a8.png)
 
 ##### 3.4 虚拟内存
 
@@ -554,7 +554,7 @@ while((n = read(diskfd, buf, BUF_SIZE)) > 0)
 
 正是**多个虚拟内存可以指向同一个物理地址**，可以把内核空间和用户空间的虚拟地址映射到同一个物理地址，这样的话，就可以减少 IO 的数据拷贝次数啦，示意图如下
 
-![img](../system-design/面试指北.assets/7dc30533-b32c-4c6c-8dcd-86e0cb898a13.png)
+![img](system-design/面试指北.assets/7dc30533-b32c-4c6c-8dcd-86e0cb898a13.png)
 
 ##### 3.5 DMA 技术
 
@@ -562,7 +562,7 @@ DMA，英文全称是 **Direct Memory Access**，即直接内存访问。**DMA**
 
 我们一起来看下 IO 流程，DMA 帮忙做了什么事情.
 
-![img](../system-design/面试指北.assets/3022007b-849e-4c12-a10e-bc30853eae2c.png)
+![img](system-design/面试指北.assets/3022007b-849e-4c12-a10e-bc30853eae2c.png)
 
 - 用户应用进程调用 read 函数，向操作系统发起 IO 调用，进入阻塞状态，等待数据返回。
 - CPU 收到指令后，对 DMA 控制器发起指令调度。
@@ -605,7 +605,7 @@ void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)
 
 `mmap+write`实现的零拷贝流程如下：
 
-![img](../system-design/面试指北.assets/284a94cf-b9d8-432f-95cc-8eaca35375e3.png)
+![img](system-design/面试指北.assets/284a94cf-b9d8-432f-95cc-8eaca35375e3.png)
 
 - 用户进程通过mmap方法向操作系统内核发起 IO 调用，上下文从用户态切换为内核态。
 - CPU 利用 DMA 控制器，把数据从硬盘中拷贝到内核缓冲区。
@@ -635,7 +635,7 @@ ssize_t sendfile(int out_fd, int in_fd, off_t *offset, size_t count);
 
 `sendfile `实现的零拷贝流程如下：
 
-![img](../system-design/面试指北.assets/16c11043-d549-4285-bd6b-71a08cbcf2dc.png)
+![img](system-design/面试指北.assets/16c11043-d549-4285-bd6b-71a08cbcf2dc.png)
 
 1. 用户进程发起 sendfile 系统调用，**上下文（切换 1）从用户态转向内核态**
 2. DMA 控制器，把数据从硬盘中拷贝到内核缓冲区。
@@ -651,7 +651,7 @@ linux 2.4 版本之后，对sendfile做了优化升级，引入 SG-DMA 技术，
 
 sendfile+DMA scatter/gather 实现的零拷贝流程如下：
 
-![img](../system-design/面试指北.assets/9829cd04-9801-4b0f-94d8-13f029dcc401.png)
+![img](system-design/面试指北.assets/9829cd04-9801-4b0f-94d8-13f029dcc401.png)
 
 1. 用户进程发起 sendfile 系统调用，**上下文（切换 1）从用户态转向内核态**
 2. DMA 控制器，把数据从硬盘中拷贝到内核缓冲区。
@@ -770,7 +770,7 @@ SELECT `score`,`name` FROM `cus_order` WHERE id >= (SELECT id FROM `cus_order` L
 
 > 利用延迟关联或者子查询优化超多分页场景。
 
-![img](../system-design/面试指北.assets/31fff0d5-d320-496c-80e9-0e94c77085ba.png)
+![img](system-design/面试指北.assets/31fff0d5-d320-496c-80e9-0e94c77085ba.png)
 
 不过，子查询的结果会产生一张新表，会影响性能，应该尽量避免大量使用子查询。
 
@@ -794,7 +794,7 @@ SELECT `score`,`name` FROM `cus_order` a, (SELECT id from `cus_order` ORDER BY `
 
 > 【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致;多表关联查询时，保证被关联 的字段需要有索引。
 
-![img](../system-design/面试指北.assets/95c48321-1dde-4f09-b87f-1600a1767328.png)
+![img](system-design/面试指北.assets/95c48321-1dde-4f09-b87f-1600a1767328.png)
 
 join 的效率比较低，主要原因是因为其使用嵌套循环（Nested Loop）来实现关联查询，三种不同的实现效率都不是很高：
 
@@ -822,7 +822,7 @@ join 的效率比较低，主要原因是因为其使用嵌套循环（Nested Lo
 
 > 不得使用外键与级联，一切外键概念必须在应用层解决。
 
-![img](../system-design/面试指北.assets/cb62034b-da57-41d5-92ad-41e22eaa75c8.png)
+![img](system-design/面试指北.assets/cb62034b-da57-41d5-92ad-41e22eaa75c8.png)
 
 网络上已经有非常多分析外键与级联缺陷的文章了，个人认为不建议使用外键主要是因为对分库分表不友好，性能方面的影响其实是比较小的。
 
@@ -854,7 +854,7 @@ UNSIGNED INT 0~4294967295
 
 **d.对于日期类型来说， DateTime 类型耗费空间更大且没有时区信息，建议使用 Timestamp。**
 
-![img](../system-design/面试指北.assets/d56a9859-9cd0-4e6f-bb82-564c31a7e4bf.jpg)
+![img](system-design/面试指北.assets/d56a9859-9cd0-4e6f-bb82-564c31a7e4bf.jpg)
 
 **e.金额字段用 decimal，避免精度丢失。**
 
@@ -912,7 +912,7 @@ MySQL 在 5.0.37 版本之后才支持 Profiling，`select @@have_profiling` 命
 
 你可以通过` SHOW VARIABLES `命令查看其状态：
 
-![img](../system-design/面试指北.assets/d04dff39-e986-4058-b4e0-bbab811adcbb.png)
+![img](system-design/面试指北.assets/d04dff39-e986-4058-b4e0-bbab811adcbb.png)
 
 也可以通过 `SELECT @@profiling`命令进行查看：
 
@@ -932,7 +932,7 @@ mysql> SELECT @@profiling;
 
 具体能收集多少个 SQL，由参数` profiling_history_size `决定，默认值为 15，最大值为 100。如果设置为 0，等同于关闭 Profiling。
 
-![img](../system-design/面试指北.assets/88c4b321-48e0-4997-b5d1-ae280a81a4b3.png)
+![img](system-design/面试指北.assets/88c4b321-48e0-4997-b5d1-ae280a81a4b3.png)
 
 如果想要展示一个 SQL 语句的执行耗时细节，可以使用`SHOW PROFILE` 命令。
 
@@ -964,7 +964,7 @@ SHOW PROFILE CPU,IPC FOR QUERY 8;
 
 如果不加 `FOR QUERY {n}`子句，默认展示最新的一次 SQL 的执行情况，加了 `FOR QUERY {n}`，表示展示 Query_ID 为 n 的 SQL 的执行情况。
 
-![img](../system-design/面试指北.assets/f94f1d3e-80ab-44cc-b254-ed03b0fc7141.png)
+![img](system-design/面试指北.assets/f94f1d3e-80ab-44cc-b254-ed03b0fc7141.png)
 
 #### 优化慢 SQL
 
@@ -1273,11 +1273,11 @@ Sentinel 的 wiki 中已经详细描述了其与 Hystrix 的区别，地址：ht
 
 假如我们有一个服务器集群，每个用户固定访问服务器集群中的某一台服务器，当我们需要发布新版本或者上新功能的时候，我们可以将服务器集群分成若干部分，每天只发布新版本到一部分服务器，这样的话，就有一部分用户可以使用最新版本。发布之后，我们需要观察新版本的服务器运行是否稳定且没有故障。如果没问题的话，我们第二天继续发布一部分服务器，通常需要持续几天才把整个集群全部发布完毕。期间如果发现有问题的话，只需要回滚已发布的那部分服务器即可。
 
-![image.png](../system-design/面试指北.assets/image-166609093307872.png)
+![image.png](system-design/面试指北.assets/image-166609093307872.png)
 
 上面列举的这个例子其实是灰度发布常用的一种方式 - **AB 测试**。AB 测试的思想就是就是把用户分成两组，一组用户使用 A 方案（新版本），一组用户使用 B 方案（老版本）。
 
-![image.png](../system-design/面试指北.assets/image(1)-166609094571574.png)
+![image.png](system-design/面试指北.assets/image%281%29-166609094571574.png)
 
 另外，这个例子是通过服务器来区分的用户，比较粗暴，而且在一些情况下无法使用。一般情况下，我们是建议在进行灰度发布之前对系统用户进行筛选，根据用户的相关信息和各项指标（比如活跃度，违规次数）来筛选出一批可以优先使用新版的用户。我们只需要通过一些手段将这些用户的请求定向到新版本服务即可！为了直观对新版本服务的稳定性进行观测，灰度发布的正确完成还需要依赖可靠的 监控系统 。
 
@@ -1287,7 +1287,7 @@ Sentinel 的 wiki 中已经详细描述了其与 Hystrix 的区别，地址：ht
 
 金丝雀也被称为瓦斯报警鸟，对于有毒气体非常敏感，在 90 年代的时候经常被拿来检测毒气（有点残忍，后来被禁止了）。为了避免金丝雀直接被毒死了，人们想到了一个办法，把金丝雀放在一个可以控制通气口气体流量的笼子，需要金丝雀预警的时候把通气口慢慢打开，如果笼子中的金丝雀被毒气毒晕，关闭通气口然后让往笼子里充氧气抢救一下金丝雀。
 
-![img](../system-design/面试指北.assets/1164f4af-9b0f-4991-a694-11e2bfd3abb1.png)
+![img](system-design/面试指北.assets/1164f4af-9b0f-4991-a694-11e2bfd3abb1.png)
 
 金丝雀预警毒气通过控制通气口气体流量来减小潜在的毒气对金丝雀的影响，金丝雀发布通过控制发布的新版本的使用范围来减小潜在的问题对整体服务的影响，两者思想非常类似。
 
@@ -1299,7 +1299,7 @@ Sentinel 的 wiki 中已经详细描述了其与 Hystrix 的区别，地址：ht
 
 1、基于 Nginx+OpenResty+Redis+Lua 实现流量动态分流来实现灰度发布，新浪的 [ABTestingGateway](https://github.com/CNSRE/ABTestingGateway) 就是这种基于这种方案的一个开源项目。
 
-![image.png](../system-design/面试指北.assets/image(2)-166609100201077.png)
+![image.png](system-design/面试指北.assets/image%282%29-166609100201077.png)
 
 2、使用 Jenkins + Nginx 实现灰度发布策，具体做法可以参考：[手把手教你搭建一个灰度发布环境](https://juejin.cn/post/6844904110601273357) 。这种方案的原理和第一种类似，都是通过对 Nginx 文件的修改来实现流量的定向分流。类似地，如果你用到了其他网关比如 Spring Cloud Gateway 的话，思路也是一样的。另外， Spring Cloud Gateway 配合 Spring Cloud LoadBalancer（官方推荐）/Ribbon 也可以实现简单的灰度发布，核心思想也还是自定义负载均衡策略来分流。
 
@@ -1307,18 +1307,18 @@ Sentinel 的 wiki 中已经详细描述了其与 Hystrix 的区别，地址：ht
 
 这种方法也是通过修改灰度发布配置的方式来实现灰度发布，如果灰度的配置测试没问题的话，再全量发布配置。
 
-![img](../system-design/面试指北.assets/13a7b586-e6be-48f1-abc6-101212576293.png)
+![img](system-design/面试指北.assets/13a7b586-e6be-48f1-abc6-101212576293.png)
 
 具体做法可以参考：
 
 - [灰度发布使用指南 - 官方文档](https://www.apolloconfig.com/#/zh/usage/apollo-user-guide?id=五、灰度发布使用指南)
 - [灰度实战基础之 Apollo](https://github.com/dangnianchuntian/gray)
 
-![image.png](../system-design/面试指北.assets/image(3)-166609102389080.png)
+![image.png](system-design/面试指北.assets/image%283%29-166609102389080.png)
 
 4、通过一些现成的工具来做，比如说 [Rainbond](https://www.rainbond.com/)（云原生应用管理平台）就自带了灰度发布解决方案并且还支持滚动发布和蓝绿发布。
 
-![image.png](../system-design/面试指北.assets/image(4)-166609103233882.png)
+![image.png](system-design/面试指北.assets/image%284%29-166609103233882.png)
 
 5、Flagger
 
@@ -1328,7 +1328,7 @@ Flagger 是一种渐进式交付工具，可自动控制 Kubernetes 上应用程
 
 Flagger 可以使用 Service Mesh（App Mesh，Istio，Linkerd）或 Ingress Controller（Contour，Gloo，Nginx）来实现多种部署策略（金丝雀发布，A/B 测试，蓝绿发布）。
 
-![img](../system-design/面试指北.assets/66a6ca67-7a4e-4169-b1d0-a0081de7e485.png)
+![img](system-design/面试指北.assets/66a6ca67-7a4e-4169-b1d0-a0081de7e485.png)
 
 ##### 回滚机制
 

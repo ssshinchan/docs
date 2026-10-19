@@ -140,7 +140,7 @@ Zabbix 和 Nagios 相继出现在 1998 年和 1999 年，目前已经被淘汰�
 
 相比于老牌监控系统，新一代监控系统有明显的优势，比如：灵活的数据模型、更成熟的时序数据库、强大的告警功能。
 
-![img](../system-design/面试指北.assets/ed6dac3c-5e2b-43da-b1ab-b4716acabff4.png)
+![img](system-design/面试指北.assets/ed6dac3c-5e2b-43da-b1ab-b4716acabff4.png)
 
 ###### Open-Falcon
 
@@ -153,7 +153,7 @@ Zabbix 和 Nagios 相继出现在 1998 年和 1999 年，目前已经被淘汰�
 
 Open-Falcon 架构图如下：
 
-![img](../system-design/面试指北.assets/c1ab0b4c-1f26-4b0f-ae82-fee2b371fbb3.png)
+![img](system-design/面试指北.assets/c1ab0b4c-1f26-4b0f-ae82-fee2b371fbb3.png)
 
 - **Falcon-agent ：**采集模块。类似 Zabbix 的 agent，Kubernetes 自带监控体系中的 cAdvisor，Nagios 中的 Plugin，使用 Go 语言开发，用于采集主机上的各种指标数据。
 - **Hearthbeat server ：**心跳服务。每个 Agent 都会周期性地通过 RPC 方式将自己地状态上报给 HBS，主要包括主机名、主机 IP、Agent 版本和插件版本，Agent 还会从 HBS 获取自己需要执行的采集任务和自定义插件。
@@ -183,7 +183,7 @@ Open-Falcon 架构图如下：
 
 Prometheus 基本架构 ：
 
-![img](../system-design/面试指北.assets/ebc3adcf-bfc0-48bd-ad3e-2fc12242fb63.png)
+![img](system-design/面试指北.assets/ebc3adcf-bfc0-48bd-ad3e-2fc12242fb63.png)
 
 - Prometheus Server：核心组件，用于收集、存储监控数据。它同时支持静态配置和通过 Service Discovery 动态发现来管理监控目标，并从监控目标中获取数据。此外，Prometheus Server 也是一个时序数据库，它将监控数据保存在本地磁盘中，并对外提供自定义的 PromQL 语言实现对数据的查询和分析。
 - Exporter：用来采集数据，作用类似于 agent，区别在于 Prometheus 是基于 Pull 方式拉取采集数据的，因此，Exporter 通过 HTTP 服务的形式将监控数据按照标准格式暴露给 Prometheus Server，社区中已经有大量现成的 Exporter 可以直接使用，用户也可以使用各种语言的 client library 自定义实现。
@@ -239,7 +239,7 @@ Prometheus 基本架构 ：
 
 我专门画了一张图，展示一下日志系统处理日志的一个基本流程。
 
-![img](../system-design/面试指北.assets/d60f05c9-ca74-479b-88ae-af5eb102b9c3.png)
+![img](system-design/面试指北.assets/d60f05c9-ca74-479b-88ae-af5eb102b9c3.png)
 
 另外，一些比较高大上的日志系统甚至还支持 **实时分析、离线分析** 等功能。
 
@@ -253,7 +253,7 @@ ELK 是目前使用的比较多的一个开源的日志系统解决方案，背�
 
 下图是一个最简单的 **ELK 日志系统架构** ：
 
-![img](../system-design/面试指北.assets/b5a4c9e8-a55b-4efb-8f61-f92c5d8e4bc8.png)
+![img](system-design/面试指北.assets/b5a4c9e8-a55b-4efb-8f61-f92c5d8e4bc8.png)
 
 我们分别来介绍一下这些开源项目以及它们在这个日志系统中起到的作用：
 
@@ -267,7 +267,7 @@ ELK 属于比较老牌的一款日志系统解决方案，这个方案存在一�
 
 于是， Elastic 推出了 Beats 。Beats 基于名为[libbeat](https://github.com/elastic/beats/tree/master/libbeat)的 Go 框架，一共包含 8 位成员。
 
-![img](../system-design/面试指北.assets/32257905-0f0a-429a-8315-e0c9fb8c83bf.png)
+![img](system-design/面试指北.assets/32257905-0f0a-429a-8315-e0c9fb8c83bf.png)
 
 这个时候，ELK 已经不仅仅代表 **E**lasticsearch 、**L**ogstash、**K**ibana 这 3 个开源项目了。
 
@@ -275,11 +275,11 @@ Elastic 官方将 ELK 重命名为 **Elastic Stack**（Elasticsearch、Kibana、
 
 Elastic 的官方文档是这样描述的（由 Chrome 插件 Mate Translate 提供翻译功能）：
 
-![img](../system-design/面试指北.assets/d08cb78d-c819-4e89-ac8e-066ebb8f6e73.png)
+![img](system-design/面试指北.assets/d08cb78d-c819-4e89-ac8e-066ebb8f6e73.png)
 
 现在的 ELK 架构变成了这样：
 
-![img](../system-design/面试指北.assets/fce86b2a-3f29-46ec-9b4c-d4962614253f.png)
+![img](system-design/面试指北.assets/fce86b2a-3f29-46ec-9b4c-d4962614253f.png)
 
 Beats 采集的数据可以直接发送到 Elasticsearch 或者在 Logstash 进一步处理之后再发送到 Elasticsearch。
 
@@ -295,7 +295,7 @@ Filebeat 是 Elastic Stack 的一部分，能够与 Logstash、Elasticsearch 和
 
 Filebeat 能够轻松地将数据传送到 Logstash（对日志进行处理）、Elasticsearch（日志检索）、甚至是 Kibana （日志展示）中。
 
-![img](../system-design/面试指北.assets/67a45c57-5cea-40a2-9cae-3f428b4cfa77.png)
+![img](system-design/面试指北.assets/67a45c57-5cea-40a2-9cae-3f428b4cfa77.png)
 
 Filebeat 只是对日志进行采集，无法对日志进行处理。日志具体的处理往往还是要交给 Logstash 来做。
 
@@ -307,7 +307,7 @@ Filebeat 只是对日志进行采集，无法对日志进行处理。日志具�
 
 Filebeat 替代 Logstash 采集日志，具体的日志处理还是由 Logstash 来做。
 
-![img](../system-design/面试指北.assets/69a5f9a4-63c8-440a-9bc9-04d3f0809c91.png)
+![img](system-design/面试指北.assets/69a5f9a4-63c8-440a-9bc9-04d3f0809c91.png)
 
 针对上图的日志系统架构图，有下面几个可优化点：
 
@@ -318,7 +318,7 @@ Filebeat 替代 Logstash 采集日志，具体的日志处理还是由 Logstash 
 
 EFK 中的 F 代表的是 [Fluentd](https://github.com/fluent/fluentd)。下图是一个最简单的 **EFK 日志系统架构** ：
 
-![img](../system-design/面试指北.assets/8376b3c6-ab90-40a4-bcf5-29e9d7f95fe6.png)
+![img](system-design/面试指北.assets/8376b3c6-ab90-40a4-bcf5-29e9d7f95fe6.png)
 
 Fluentd 是一款开源的日志收集器，使用 Ruby 编写，其提供的功能和 Logstash 差不多。但是，要更加轻量，性能也更优越，内存占用也更低。具体使用教程，可以参考[《性能优越的轻量级日志收集工具，微软、亚马逊都在用！》](https://mp.weixin.qq.com/s/sXYDIJpIhPsVGNkSCIaNfQ)。
 
@@ -334,11 +334,11 @@ Fluentd 是一款开源的日志收集器，使用 Ruby 编写，其提供的功
 
 官方的介绍也比较有意思哈！ Like Prometheus,But For Logs. （类似于 Prometheus 的日志系统，不过主要是为日志服务的）。
 
-![img](../system-design/面试指北.assets/b1fc2871-5d5a-4127-a139-359b80e6156d.png)
+![img](system-design/面试指北.assets/b1fc2871-5d5a-4127-a139-359b80e6156d.png)
 
 根据官网 ，Loki 的架构如下图所示
 
-![img](../system-design/面试指北.assets/851b4a8c-723d-4814-825e-e6da2b408dc3.png)
+![img](system-design/面试指北.assets/851b4a8c-723d-4814-825e-e6da2b408dc3.png)
 
 Loki 的整个架构非常简单，主要有 3 个组件组成：
 

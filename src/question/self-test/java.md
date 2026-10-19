@@ -328,7 +328,7 @@ ClassFile {
 
 💡 提示：
 
-![img](../system-design/面试指北.assets/images-1666097216937197)
+![img](../system-design/面试指北.assets/images-1666097216937197.png)
 
 **双亲委派模型了解么？如果我们不想用双亲委派模型怎么办？【⭐⭐⭐⭐⭐】**
 

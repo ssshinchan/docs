@@ -543,8 +543,8 @@ printArray( stringArray  );
 
 ##### 项目中哪里用到了泛型？
 
-- 自定义接口通用返回结果 CommonResult<T> 通过参数 T 可根据具体的返回类型动态指定结果的数据类型
-- 定义 Excel 处理类 ExcelUtil<T> 用于动态指定 Excel 导出的数据类型
+- 自定义接口通用返回结果 `CommonResult<T>` 通过参数 T 可根据具体的返回类型动态指定结果的数据类型
+- 定义 Excel 处理类 `ExcelUtil<T>` 用于动态指定 Excel 导出的数据类型
 - 构建集合工具类（参考 Collections 中的 sort, binarySearch 方法）。
 - ......
 
@@ -581,7 +581,7 @@ public void print(List<Integer> list) { }
 
 ![img](../system-design/面试指北.assets/11b0bd1c-95ae-4ef1-9aa1-0cc1fee5962a.png)
 
-原因也很简单，泛型擦除之后，List<String> 与 List<Integer> 在编译以后都变成了 List 。
+原因也很简单，泛型擦除之后，`List<String>` 与 `List<Integer>` 在编译以后都变成了 List 。
 
 既然编译器要把泛型擦除，那为什么还要用泛型呢？用 Object 代替不行吗？
 

@@ -55,7 +55,7 @@
 
 你可以通过 Google 高级搜索过滤搜索结果，缩小搜索结果的范围，地址：https://www.google.com/advanced_search 。
 
-![google-seach-site-website-domin.png](system-design/面试指北.assets/google-seach-site-website-domin(1).png)
+![google-seach-site-website-domin.png](system-design/面试指北.assets/google-seach-site-website-domin%281%29.png)
 
 我们上面讲到的 site:网站或域名 功能也可以在这个高级搜索页面上完成。
 
@@ -826,11 +826,11 @@ Github Trending 我几乎每天必看，通过 Github Trending 我可以大概�
 4. **分布式系统开发能力 ：**缓存、消息队列等等都要掌握，关键是还要能使用这些技术解决实际问题而不是纸上谈兵。
 5. **不错的 sense :**喜欢和尝试新技术、追求编写优雅的代码等等。
 
-![img](system-design/面试指北.assets/images-166615694601151)
+![img](system-design/面试指北.assets/images-166615694601151.png)
 
 **再从应届生的角度来看：** 我们还是看阿里巴巴的官网相关应届生 Java 工程师招聘岗位的相关要求。
 
-![img](system-design/面试指北.assets/images(1)-166615695771153)
+![img](system-design/面试指北.assets/images%281%29-166615695771153.png)
 
 结合阿里、腾讯等大厂招聘官网对于 Java 后端方向/后端方向的应届实习生的要求下面几点也提升你的个人竞争力：
 

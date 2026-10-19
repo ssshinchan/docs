@@ -6,7 +6,7 @@
 
 #### **Elasticsearch 基础**
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F20210201160425128.png)
+![img](https://img-blog.csdnimg.cn/20210201160425128.png)
 
 ##### Elasticsearch 是什么？
 
@@ -40,11 +40,11 @@ Github 地址：https://github.com/apache/lucene
 
   电商网站检索：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F699e89ed90febc77dafa5875b0320d2d.png)
+![img](https://img-blog.csdnimg.cn/img_convert/699e89ed90febc77dafa5875b0320d2d.png)
 
 ELK 日志采集系统架构（负责日志的搜索)：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fff75430c69e043a044bef1a355023dfe.png)
+![img](https://img-blog.csdnimg.cn/img_convert/ff75430c69e043a044bef1a355023dfe.png)
 
 ##### 为什么需要 Elasticsearch？MySQL 不行吗？
 
@@ -108,7 +108,7 @@ MySQL 与 Elasticsearch 的概念简单类比：
 
 如下图所示，倒排索引使用 **词语/词条（Term）** 来作为索引关键字，并同时记录了哪些 **文档（Document）** 中有这个词语。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F6a90b193af22b397d3f8ef2b51064e6f.png)
+![img](https://img-blog.csdnimg.cn/img_convert/6a90b193af22b397d3f8ef2b51064e6f.png)
 
 - 文档（Document） ：用来搜索的数据，其中的每一条数据就是一个文档。例如一个商品信息、商家信息、一页网页的内容。
 - 词语/词条（Term） ：对文档数据或用户搜索数据，利用某种算法分词，得到的具备含义的词语就是词条。例如 ''数据库索引可以大幅提高查询速度" 这段话被中文分词器 IK Analyzer 细粒度分词后得到[数据库,索引,可以,大幅,提高,查询,速度]。
@@ -132,7 +132,7 @@ MySQL 与 Elasticsearch 的概念简单类比：
 
 Lucene 的倒排索引大致是下面这样的（图源：https://segmentfault.com/a/1190000037658997）：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fbf95cdf34c3dd219e9d7422d74aa20b0.jpeg)
+![img](https://img-blog.csdnimg.cn/img_convert/bf95cdf34c3dd219e9d7422d74aa20b0.jpeg)
 
 **倒排索引检索流程：**
 
@@ -153,7 +153,7 @@ Lucene 的倒排索引大致是下面这样的（图源：https://segmentfault.c
 
 不同于倒排索引，正排索引将文档 ID 和分词建立关联。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fd5e0f71bf6b88948365765b3b3887f6c.png)
+![img](https://img-blog.csdnimg.cn/img_convert/d5e0f71bf6b88948365765b3b3887f6c.png)
 
 根据词语查询时，必须先逐条获取每个文档，然后判断文档中是否包含所需要的词语，查询效率较低。
 
@@ -197,7 +197,7 @@ Analyzer 翻译成中文叫做分析器，不过，很多人一般习惯称呼�
 
 上面这些也都是 ES 内置的分词器，详细介绍请看官方文档：https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F3d900575010cb6c8c743e3a6f7ad01f1.png)
+![img](https://img-blog.csdnimg.cn/img_convert/3d900575010cb6c8c743e3a6f7ad01f1.png)
 
 这个官方文档为每一个分词器都列举了对应的例子帮助理解，比如 Standard Analyzer 的例子是下面这样的。
 
@@ -259,7 +259,7 @@ Keyword Analyzer 分词示例：
 
 下图是默认分词器 Standard Analyzer 的分词流程。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fguide-blog-images.oss-cn-shenzhen.aliyuncs.com%2Fgithub%2Fjavaguide%2Fsearch-engine%2Fes%2Fprocess-flow-of-standard-analyzer.png)
+![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/search-engine/es/process-flow-of-standard-analyzer.png)
 
 ##### Elasticsearch 如何基于拼音搜索？
 
@@ -565,7 +565,7 @@ GET users/_search
 
 `match_phrase` 查询多个检索词之间默认是 and 关系，并且词的位置关系影响搜索结果
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Ff82d8fe41a47fa739eee8cad7ebcb9d8.png)
+![img](https://img-blog.csdnimg.cn/img_convert/f82d8fe41a47fa739eee8cad7ebcb9d8.png)
 
 ##### Multi match 有几种匹配策略，都有什么区别？
 
@@ -677,7 +677,7 @@ GET /users/_search
 2. MySQL Master 节点接收到请求之后，根据偏移量将新的 binlog 发送给 MySQL Slave 节点；
 3. Canal 接收到 binlog 之后，就可以对这部分日志进行解析，获取主库的结构及数据变更。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F5c4a078f673d83329c5eb90bf9720de8.png)**Elasticsearch 集群**
+![img](https://img-blog.csdnimg.cn/img_convert/5c4a078f673d83329c5eb90bf9720de8.png)**Elasticsearch 集群**
 
 #### **Elasticsearch 集群**
 
@@ -687,7 +687,7 @@ GET /users/_search
 
 Elasticsearch 集群说白了就是多个 Elasticsearch 节点的集合，这些节点共同协作，一起提供服务，这样就可以解决单台 Elasticsearch 服务器无法处理的搜索需求和数据存储需求。出于高可用方面的考虑，集群中节点数量建议 3 个以上，并且其中至少两个节点不是仅投票主节点（后文会介绍到）。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fwww.dbi-services.com%2Fblog%2Fwp-content%2Fuploads%2Fsites%2F2%2F2022%2F01%2FElasticsearch-index-shards.png)
+![img](https://www.dbi-services.com/blog/wp-content/uploads/sites/2/2022/01/Elasticsearch-index-shards.png)
 
 Elasticsearch 集群可以很方便地实现横向扩展，我们可以动态添加或者删除 Elasticsearch 节点。当有节点加入集群中或者从集群中移除节点时，集群将会重新平均分布所有的数据。
 

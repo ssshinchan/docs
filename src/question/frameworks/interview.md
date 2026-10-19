@@ -674,7 +674,7 @@ public class ScheduledTasks {
 
 不用 NIO 主要是因为 NIO 的编程模型复杂而且存在一些 BUG，并且对编程功底要求比较高。下图就是一个典型的使用 NIO 进行编程的案例：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F65cda835ebfc0909924fc3cdb88099a7.png)
+![img](https://img-blog.csdnimg.cn/img_convert/65cda835ebfc0909924fc3cdb88099a7.png)
 
 而且，NIO 在面对断连重连、包丢失、粘包等问题时处理过程非常复杂。Netty 的出现正是为了解决这些问题，更多关于 Netty 的特点可以看下面的内容。
 
@@ -715,7 +715,7 @@ public class ScheduledTasks {
 
 实际上还有很多很多优秀的项目用到了 Netty,Netty 官方也做了统计，统计结果在这里：https://netty.io/wiki/related-projects.html 。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Ffcd551063cc03f0b8afb238f6a569fde.png)
+![img](https://img-blog.csdnimg.cn/img_convert/fcd551063cc03f0b8afb238f6a569fde.png)
 
 #### 介绍一下 Netty 的核心组件？
 
@@ -725,7 +725,7 @@ public class ScheduledTasks {
 
 简单介绍 Netty 最核心的一些组件（对于每一个组件这里不详细介绍）。通过下面这张图你可以将我提到的这些 Netty 核心组件串联起来。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Ff2f7557a44dbb95963b8ddd6a0960bb9.png)
+![img](https://img-blog.csdnimg.cn/img_convert/f2f7557a44dbb95963b8ddd6a0960bb9.png)
 
 ##### Bytebuf（字节容器）
 
@@ -844,7 +844,7 @@ EventLoopGroup 包含多个 EventLoop（每一个 EventLoop 通常内部包含�
 
 下图是 Netty **NIO** 模型对应的` EventLoop` 模型。通过这个图应该可以将`EventloopGroup、EventLoop、 Channel`三者联系起来。
 
-​	![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F6e1e15c1448cc2bf5d9c24446f3c515b.png&sign=cc48ba24302d0ef7ab3a604d6ce6e27aec3adb38f07b9adfbf1757299bb3bbe2)
+​	![img](https://img-blog.csdnimg.cn/img_convert/6e1e15c1448cc2bf5d9c24446f3c515b.png&sign=cc48ba24302d0ef7ab3a604d6ce6e27aec3adb38f07b9adfbf1757299bb3bbe2)
 
 ##### **ChannelHandler（消息处理器） 和 ChannelPipeline（ChannelHandler 对象链表）**
 
@@ -870,7 +870,7 @@ EventLoopGroup 包含多个 EventLoop（每一个 EventLoop 通常内部包含�
 
 当 `ChannelHandler` 被添加到的` ChannelPipeline` 它得到一个 `ChannelHandlerContext`，它代表一个 `ChannelHandler` 和 `ChannelPipeline `之间的“绑定”。 `ChannelPipeline` 通过 `ChannelHandlerContext`来间接管理 `ChannelHandler` 。
 
-![img](../system-design/面试指北.assets/images(1)-166606199525910)
+![img](../system-design/面试指北.assets/images%281%29-166606199525910.png)
 
 ##### **ChannelFuture（操作执行结果）**
 
@@ -991,7 +991,7 @@ Reactor 线程模型分为单线程模型、多线程模型以及主从多线程
 
 所有的 IO 操作都由同一个 NIO 线程处理。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fe5493f74f5ed16c462c36654170e16ae.png)
+![img](https://img-blog.csdnimg.cn/img_convert/e5493f74f5ed16c462c36654170e16ae.png)
 
 **单线程 Reactor 的优点是对系统资源消耗特别小，但是，没办法支撑大量请求的应用场景并且处理请求的时间可能非常慢，毕竟只有一个线程在工作嘛！所以，一般实际项目中不会使用单线程 Reactor 。**
 
@@ -999,7 +999,7 @@ Reactor 线程模型分为单线程模型、多线程模型以及主从多线程
 
 ##### 多线程 Reactor
 
-一个线程负责接受请求,一组 NIO 线程处理 IO 操作![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F0e694ecd1399d78b8983f22fc0e2341e.png)**大部分场景下多线程 Reactor 模型是没有问题的，但是在一些并发连接数比较多（如百万并发）的场景下，一个线程负责接受客户端请求就存在性能问题了。**
+一个线程负责接受请求,一组 NIO 线程处理 IO 操作![img](https://img-blog.csdnimg.cn/img_convert/0e694ecd1399d78b8983f22fc0e2341e.png)**大部分场景下多线程 Reactor 模型是没有问题的，但是在一些并发连接数比较多（如百万并发）的场景下，一个线程负责接受客户端请求就存在性能问题了。**
 
 为了解决这些问题，演进出了主从多线程 Reactor 模型。
 
@@ -1007,7 +1007,7 @@ Reactor 线程模型分为单线程模型、多线程模型以及主从多线程
 
 一组 NIO 线程负责接受请求，一组 NIO 线程处理 IO 操作。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F4059d7d2e2d73b876774ce7e55cc819c.png)
+![img](https://img-blog.csdnimg.cn/img_convert/4059d7d2e2d73b876774ce7e55cc819c.png)
 
 #### Netty 线程模型了解么？
 

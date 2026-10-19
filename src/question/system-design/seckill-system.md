@@ -61,7 +61,7 @@
 
 另外，我们平时使用 Redis 做缓存比较多，关于如何快速定位 Redis 热点数据，可以看下[如何快速定位 Redis 热 key](https://www.infoq.cn/article/3l3zaq4h8xpnom2glsyi)这篇文章。
 
-![img](面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F20210625085635200.png)
+![img](https://img-blog.csdnimg.cn/20210625085635200.png)
 
 **如何处理热点数据？** 热点数据一定要放在缓存中，并且最好可以写入到 jvm 内存一份（多级缓存），并设置个过期时间。需要注意写入到 jvm 的热点数据不宜过多，避免内存占用过大，一定要设置到淘汰策略。
 
@@ -95,7 +95,7 @@
 
 你直接通过 Redis replication（异步复制） 搞个一主(master)多从(slave)来提高可用性和读吞吐量，slave 的多少取决于你的读吞吐量。
 
-![img](面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F20210510110935773.png)
+![img](https://img-blog.csdnimg.cn/20210510110935773.png)
 
 这样的方式有一个问题：一旦 master 宕机，slave 晋升成 master，同时需要修改应用方的主节点地址，还需要命令所有从节点去复制新的主节点，整个过程需要人工干预。
 
@@ -103,7 +103,7 @@
 
 Sentinel 是 Redis 的一种运行模式 ，它主要的作用就是对 Redis 运行节点进行监控。当 master 节点出现故障的时候， Sentinel 会帮助我们实现故障转移，确保整个 Redis 系统的可用性。整个过程完全自动，不需要人工介入!
 
-![img](面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F2021051011143961.png)
+![img](https://img-blog.csdnimg.cn/2021051011143961.png)
 
 Sentinel 也是一个 Redis 进程，只是不对外提供读写服务，通常哨兵要配置成单数。
 
@@ -121,11 +121,11 @@ Sentinel 也是一个 Redis 进程，只是不对外提供读写服务，通常�
 
 Sentinel 主要以流量为切入点，提供 **流量控制、熔断降级、系统自适应保护**等功能来保护系统的稳定性和可用性。
 
-![img](面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fc0e01ae29ba72593b49c0e0f2c152771.png)
+![img](https://img-blog.csdnimg.cn/img_convert/c0e01ae29ba72593b49c0e0f2c152771.png)
 
 个人比较建议使用 Sentinel ，更新维护频率更高，功能更强大，并且生态也更丰富（Sentinel 提供与 Spring Cloud、Dubbo 和 gRPC 等常用框架和库的开箱即用集成， Sentinel 未来还会对更多常用框架进行适配，并且会为 Service Mesh 提供集群流量防护的能力）。
 
-![img](面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F20210625091858288.png)
+![img](https://img-blog.csdnimg.cn/20210625091858288.png)
 
 ##### 排队
 
@@ -250,7 +250,7 @@ lock.unlock();
 
 我简单画了一张图来总结一下上面涉及到的一些技术。
 
-![img](面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F20210624203212318.png)
+![img](https://img-blog.csdnimg.cn/20210624203212318.png)
 
 另外，上面涉及到知识点还蛮多的，如果面试官单独挑出一个来深挖还是能够问出很多问题的。
 

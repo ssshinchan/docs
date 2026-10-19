@@ -64,7 +64,7 @@
 
 💡 提示：ACID 特性大家都知道，但是，这里有一个绝大部分人可能会理解错误的地方：只有保证了事务的持久性、原子性、隔离性之后，一致性才能得到保障。也就是说 A、I、D 是手段，C 是目的！
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fguide-blog-images.oss-cn-shenzhen.aliyuncs.com%2Fgithub%2Fjavaguide%2Fmysql%2FACID.png)
+![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/ACID.png)
 
 面试官可能还会顺便问你：“持久性是如何保证的？”、“原子性是如何保证的？”巴拉巴拉。这个时候你就需要结合 MySQL 日志、MySQL 锁以及 MVCC 来回答。
 

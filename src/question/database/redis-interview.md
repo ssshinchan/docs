@@ -559,7 +559,7 @@ HASH_SLOT = CRC16(key) mod NUMER_OF_SLOTS
 
 如果哈希槽确实是当前节点负责，那就直接响应客户端的请求返回结果，如果不由当前节点负责，就会返回 -MOVED 重定向错误，告知客户端当前哈希槽是由哪个节点负责，客户端向目标节点发送请求并更新缓存的哈希槽分配信息。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fguide-blog-images.oss-cn-shenzhen.aliyuncs.com%2Fgithub%2Fjavaguide%2Fdatabase%2Fredis%2Fredis-cluster%2Fredis-cluster-3-find-hash-slot.png)
+![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/database/redis/redis-cluster/redis-cluster-3-find-hash-slot.png)
 
 这个时候你可能就会疑问：**为什么还会存在找错节点的情况呢？根据公式计算难道还会出错？**
 

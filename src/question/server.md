@@ -35,7 +35,7 @@ Tomcat 就是 一个 Servlet 容器。为了方便使用，Tomcat 同时具有 H
 
 ##### **HTTP 服务器工作原理了解吗？**
 
-![img](../system-design/面试指北.assets/7e8f7798-0eb9-47d1-9a10-1252deea4926.png)
+![img](system-design/面试指北.assets/7e8f7798-0eb9-47d1-9a10-1252deea4926.png)
 
 1. 用户通过浏览器进行了一个操作，比如输入网址并回车，或者是点击链接，接着浏览器获取了这个事件。
 2. 浏览器向服务端发出 TCP 连接请求。
@@ -73,7 +73,7 @@ public interface Servlet {
 
 Servlet 容器会根据 `web.xml` 文件中的映射关系，调用相应的 Servlet，Servlet 将处理的结果返回给 Servlet 容器，并通过 HTTP 服务器将响应传输给客户端。
 
-![img](../system-design/面试指北.assets/1d453c9f-b91f-4e86-bd32-c8947e65e982.png)
+![img](system-design/面试指北.assets/1d453c9f-b91f-4e86-bd32-c8947e65e982.png)
 
 几乎所有的 Java Web 框架（比如 Spring）都是基于 Servlet 的封装。
 
@@ -103,7 +103,7 @@ Servlet 容器会根据 `web.xml` 文件中的映射关系，调用相应的 Ser
 
 #### **Tomcat 文件夹**
 
-![img](../system-design/面试指北.assets/b6cd5843-9f64-4ad1-ab54-a4cf9ba6da9a.png)
+![img](system-design/面试指北.assets/b6cd5843-9f64-4ad1-ab54-a4cf9ba6da9a.png)
 
 - /bin：存放 Windows 或 Linux 平台上启动和关闭 Tomcat 的脚本文件。
 - /conf：存放 Tomcat 的各种全局配置文件，其中最重要的是 server.xml。
@@ -148,7 +148,7 @@ Tomcat 要实现 2 个核心功能：
 
 因此 Tomcat 设计了两个核心组件 **连接器（Connector）** 和 **容器（Container）** 来分别做这两件事情。
 
-![img](../system-design/面试指北.assets/8fc8cc93-b704-48dd-9838-cfac757c2026.jpg)
+![img](system-design/面试指北.assets/8fc8cc93-b704-48dd-9838-cfac757c2026.jpg)
 
 ##### 连接器有什么作用?
 
@@ -176,11 +176,11 @@ Tomcat 要实现 2 个核心功能：
 
 **Endpoint 负责提供字节流给 Processor，Processor 负责提供 Tomcat Request 对象给 Adapter，Adapter 负责提供 ServletRequest 对象给容器。**
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fstatic001.geekbang.org%2Fresource%2Fimage%2F6e%2Fce%2F6eeaeb93839adcb4e76c15ee93f545ce.jpeg)
+![img](https://static001.geekbang.org/resource/image/6e/ce/6eeaeb93839adcb4e76c15ee93f545ce.jpeg)
 
 连接器用 `ProtocolHandler` 接口来封装通信协议和 I/O 模型的差异，`ProtocolHandler` 内部又分为` Endpoint` 和 `Processor` 模块，`Endpoint `负责底层 `Socket` 通信，`Processor` 负责应用层协议解析。连接器通过适配器 `Adapter `调用容器。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fstatic001.geekbang.org%2Fresource%2Fimage%2F30%2Fcf%2F309cae2e132210489d327cf55b284dcf.jpeg)
+![img](https://static001.geekbang.org/resource/image/30/cf/309cae2e132210489d327cf55b284dcf.jpeg)
 
 如果要支持新的 I/O 方案、新的应用层协议，只需要实现相关的具体子类，上层通用的处理逻辑是不变的。
 
@@ -188,7 +188,7 @@ Tomcat 要实现 2 个核心功能：
 
 Tomcat 设计了 4 种容器，分别是 **Engine、Host、Context 和 Wrapper**。这 4 种容器不是平行关系，而是父子关系。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fstatic001.geekbang.org%2Fresource%2Fimage%2Fcc%2Fed%2Fcc968a11925591df558da0e7393f06ed.jpeg)
+![img](https://static001.geekbang.org/resource/image/cc/ed/cc968a11925591df558da0e7393f06ed.jpeg)
 
 - **Context** 表示一个 Web 应用程序；
 - **Wrapper** 表示一个 Servlet，一个 Web 应用程序中可能会有多个 Servlet；
@@ -197,7 +197,7 @@ Tomcat 设计了 4 种容器，分别是 **Engine、Host、Context 和 Wrapper**
 
 你可以再通过 Tomcat 的 `server.xml `配置文件来加深对 Tomcat 容器的理解。Tomcat 采用了组件化的设计，它的构成组件都是可配置的，其中最外层的是 Server，其他组件按照一定的格式要求配置在这个顶层容器中。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Ffiles.mdnice.com%2Fuser%2F3586%2F2d678e57-5469-42c6-844e-fe001782f61a.png)
+![img](https://files.mdnice.com/user/3586/2d678e57-5469-42c6-844e-fe001782f61a.png)
 
 ##### 请求是如何定位到 Servlet 的？
 
@@ -209,7 +209,7 @@ Mapper`组件的功能就是将用户请求的 URL 定位到一个 Servlet。它
 
 举个例子：有一个网购系统，有面向网站管理人员的后台管理系统，还有面向终端客户的在线购物系统。这两个系统跑在同一个 Tomcat 上，为了隔离它们的访问域名，配置了两个虚拟域名：manage.shopping.com 和 user.shopping.com 。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fstatic001.geekbang.org%2Fresource%2Fimage%2Fbe%2F96%2Fbe22494588ca4f79358347468cd62496.jpeg)
+![img](https://static001.geekbang.org/resource/image/be/96/be22494588ca4f79358347468cd62496.jpeg)
 
 假如有用户访问一个 URL，比如图中的http://user.shopping.com:8080/order/buy，Tomcat 如何将这个 URL 定位到一个 Servlet 呢？
 
@@ -236,7 +236,7 @@ Tomcat 自定义类加载器打破双亲委托机制的目的是为了优先加�
 
 为了解决上面这些问题，Tomcat 设计了类加载器的层次结构。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fstatic001.geekbang.org%2Fresource%2Fimage%2F62%2F23%2F6260716096c77cb89a375e4ac3572923.png)
+![img](https://static001.geekbang.org/resource/image/62/23/6260716096c77cb89a375e4ac3572923.png)
 
 **我们先来看第 1 个问题: Web 应用之间的类之间如何隔离？**
 
@@ -348,7 +348,7 @@ server {
 
 举个例子：公司内网部署了 3 台服务器，客户端请求直接经过代理服务器，由代理服务器将请求转发到内网服务器并最终决定哪一台服务器处理客户端请求。
 
-![reverse-proxy.png](../system-design/面试指北.assets/reverse-proxy.png)
+![reverse-proxy.png](system-design/面试指北.assets/reverse-proxy.png)
 
 反向代理隐藏了真实的服务器，为服务器收发请求，使真实服务器对客户端不可见。一般在处理跨域请求的时候比较常用。现在基本上所有的大型网站都设置了反向代理。
 
@@ -368,7 +368,7 @@ Nginx 主要被作为反向代理服务器使用，不过，其同样也是正�
 
 举个例子：我们无法直接访问外网，但是可以借助科学上网工具 VPN 来访问。VPN 会把访问外网服务器（目标服务器）的客户端请求代理到一个可以直接访问外网的代理服务器上去。代理服务器会把外网服务器返回的内容再转发给客户端。
 
-![forward-proxy.png](../system-design/面试指北.assets/forward-proxy.png)
+![forward-proxy.png](system-design/面试指北.assets/forward-proxy.png)
 
 外网服务器并不知道客户端是通过 VPN 访问的
 
@@ -389,7 +389,7 @@ Nginx 可以将接收到的客户端请求以一定的规则（负载均衡策�
 
 除此之外，Nginx 还带有**健康检查**（服务器心跳检查）功能，会定期轮询向集群里的所有服务器发送健康检查请求，来检查集群中是否有服务器处于异常状态。
 
-![img](../system-design/面试指北.assets/3bf9d0c4-b460-4b2c-91bb-2284fe8a5c19-1666092050468103.png)
+![img](system-design/面试指北.assets/3bf9d0c4-b460-4b2c-91bb-2284fe8a5c19-1666092050468103.png)
 
 ##### 动静分离
 
@@ -504,7 +504,7 @@ upstream_check_module 是一款阿里的一位大佬开源的，使用 Perl 和 
 
 关于 upstream_check_module 实现后端服务健康检查的具体做法可以参考[Nginx 负载均衡健康检查功能](https://cloud.tencent.com/developer/article/1700001)这篇文章。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fgitee.com%2FSnailClimb%2Fblog-images%2Fraw%2Fmaster%2Fnginx%2F%2Fupstream_check_module.png)
+![img](https://gitee.com/SnailClimb/blog-images/raw/master/nginx//upstream_check_module.png)
 
 #### 如何保证 Nginx 服务的高可用？
 
@@ -550,7 +550,7 @@ Keepalived 不仅仅可以和 Nginx 搭配使用，还可以和 [LVS](https://ws
 
 一张图来了解 Nginx 的总结架构:
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fgitee.com%2FSnailClimb%2Fblog-images%2Fraw%2Fmaster%2Fnginx%2F%2Fnginx-architecture.png)
+![img](https://gitee.com/SnailClimb/blog-images/raw/master/nginx//nginx-architecture.png)
 
 #### Nginx 进程模型了解么？ 
 

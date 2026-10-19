@@ -68,7 +68,7 @@
 
 如果你是校招的话，点击“校招网申”就可以直接跳转到各大企业的校园招聘入口的整合页面了。
 
-![img](../system-design/面试指北.assets/719f554c-dc08-4dd5-8dea-ef9b34755479-1666093508564122.png)
+![img](system-design/面试指北.assets/719f554c-dc08-4dd5-8dea-ef9b34755479-1666093508564122.png)
 
 **4.认识的朋友**
 
@@ -90,15 +90,15 @@ Guide 当时也参加了几场宣讲会。不过，我是在荆州上学，那�
 
 **1.个人介绍没太多实用的信息。**
 
-![img](../system-design/面试指北.assets/5a0cb06c-a8e6-479b-8ffc-c59da2d62b44-1666093545588124.webp)
+![img](system-design/面试指北.assets/5a0cb06c-a8e6-479b-8ffc-c59da2d62b44-1666093545588124.webp)
 
 技术博客、Github 以及在校获奖经历的话，能写就尽量写在这里。 你可以参考下面 👇 的模板进行修改：
 
-![img](../system-design/面试指北.assets/52c51d1b-3e5d-4b22-b86a-abda3ac2dc43-1666093556210126.webp)
+![img](system-design/面试指北.assets/52c51d1b-3e5d-4b22-b86a-abda3ac2dc43-1666093556210126.webp)
 
 **2.项目经历过于简单，完全没有质量可言**
 
-![img](../system-design/面试指北.assets/bf51384f-7026-4f6e-852f-20c93819b3a8-1666093569737128.webp)
+![img](system-design/面试指北.assets/bf51384f-7026-4f6e-852f-20c93819b3a8-1666093569737128.webp)
 
 每一个项目经历真的就一两句话可以描述了么？还是自己不想写？还是说不是自己做的，不敢多写。
 
@@ -114,11 +114,11 @@ Guide 当时也参加了几场宣讲会。不过，我是在荆州上学，那�
 
 **3.计算机二级这个证书对于计算机专业完全不用写了，没有含金量的。**
 
-![img](../system-design/面试指北.assets/ed41ad32-9058-4cef-b100-56712d909447-1666093596415130.webp)
+![img](system-design/面试指北.assets/ed41ad32-9058-4cef-b100-56712d909447-1666093596415130.webp)
 
 **4.技能介绍问题太大。**
 
-![img](../system-design/面试指北.assets/3b973faa-21f5-4078-84cf-9f3797dbd834-1666093604159132.png)
+![img](system-design/面试指北.assets/3b973faa-21f5-4078-84cf-9f3797dbd834-1666093604159132.png)
 
 - 技术名词最好规范大小写比较好，比如 java->Java ，spring boot -> Spring Boot 。这个虽然有些面试官不会介意，但是很多面试官都会在意这个细节的。
 
@@ -200,7 +200,7 @@ Guide 当时也参加了几场宣讲会。不过，我是在荆州上学，那�
 - 降级
 - 熔断
 
-![img](../system-design/面试指北.assets/9284b079-786d-4bdd-bbd5-36c91f58e9ed-1666093736347134.png)
+![img](system-design/面试指北.assets/9284b079-786d-4bdd-bbd5-36c91f58e9ed-1666093736347134.png)
 
 不同类型的公司对于技能的要求侧重点是不同的比如腾讯、字节可能更重视计算机基础比如网络、操作系统这方面的内容。阿里、美团这种可能更重视你的项目经历、实战能力。
 
@@ -383,7 +383,7 @@ HR 面指的就是人力资源对你进行面试。HR 通常第一个问题就�
 
 示例：
 
-![img](../system-design/面试指北.assets/882a8258-d2d2-4a39-9d64-3c6373d8c4dc.png)
+![img](system-design/面试指北.assets/882a8258-d2d2-4a39-9d64-3c6373d8c4dc.png)
 
 #### 求职意向
 
@@ -391,7 +391,7 @@ HR 面指的就是人力资源对你进行面试。HR 通常第一个问题就�
 
 示例：
 
-![img](../system-design/面试指北.assets/952dc989-4dde-4082-afa3-ee27fd5fbea9.png)
+![img](system-design/面试指北.assets/952dc989-4dde-4082-afa3-ee27fd5fbea9.png)
 
 #### 教育经历
 
@@ -407,11 +407,11 @@ HR 面指的就是人力资源对你进行面试。HR 通常第一个问题就�
 
 下面这个专业技能介绍，你可以根据自己的实际情况参考一下。
 
-![img](../system-design/面试指北.assets/827799aa-d3d0-454e-849a-39a5882d2ec7.png)
+![img](system-design/面试指北.assets/827799aa-d3d0-454e-849a-39a5882d2ec7.png)
 
 我这里再单独放一个我看过的某位同学的技能介绍，我们来找找问题。
 
-![img](../system-design/面试指北.assets/01aae7c4-bd79-40f3-b8c6-2d9febaba9d0.png)
+![img](system-design/面试指北.assets/01aae7c4-bd79-40f3-b8c6-2d9febaba9d0.png)
 
 上图中的技能介绍存在的问题：
 
@@ -451,7 +451,7 @@ HR 面指的就是人力资源对你进行面试。HR 通常第一个问题就�
 
 项目经历介绍模板：
 
-![img](../system-design/面试指北.assets/94151987-17b4-4d28-b6bf-7fed6120cecd.png)
+![img](system-design/面试指北.assets/94151987-17b4-4d28-b6bf-7fed6120cecd.png)
 
 个人工作内容描述最好可以体现自己的综合素质，比如你是如何协调项目组成员协同开发的或者在遇到某一个棘手的问题的时候你是如何解决的又或者说你在这个项目优化了某个模块的性能。示例：项目的 MySQL 数据库中的某张表的数据量达到千万级别，查询速度非常缓慢，数据库压力非常大，我使用 Sharding-JDBC 进行了分库分表，单表的数据量都在 300w 以下。
 
@@ -646,9 +646,9 @@ Netty 中使用了大量的设计模式以及优秀的设计原则。
 
 比如，我在看 Dubbo 源码之前，我就首先花了大量时间熟悉了 Dubbo 的模块分包，这个在其官方文档上介绍的就非常详细。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fguide-blog-images.oss-cn-shenzhen.aliyuncs.com%2Fjavaguide%2Fdubbo-modules.jpeg)
+![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/dubbo-modules.jpeg)
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fbb0639124ff5896b6735f06c4f555b98.png)
+![img](https://img-blog.csdnimg.cn/img_convert/bb0639124ff5896b6735f06c4f555b98.png)
 
 ##### 从某个功能主线/问题出发研究项目源码 
 
@@ -664,7 +664,7 @@ Netty 中使用了大量的设计模式以及优秀的设计原则。
 
 比如在 Dubbo 项目源码中，我们找到 dubbo-demo 这个文件夹，里面包含了 3 种不同类型（xml、api、annotation）使用方式的 demo，可以帮助我们节省掉大量写 Demo 的时间。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F0486ec54187e80ecd07a81aafebbf278.png)
+![img](https://img-blog.csdnimg.cn/img_convert/0486ec54187e80ecd07a81aafebbf278.png)
 
 #### 有哪些对阅读源码有帮助的建议 
 
@@ -714,17 +714,17 @@ Netty 中使用了大量的设计模式以及优秀的设计原则。
 
 比如在 IDEA 中我们通过 command+o(mac)或者 ctrl+n(win/linux)即可搜索类以及文件
 
-![img](../system-design/面试指北.assets/6feb1a70-cf36-4632-b9ac-55eb430b87a0.png)
+![img](system-design/面试指北.assets/6feb1a70-cf36-4632-b9ac-55eb430b87a0.png)
 
 通过 command+f12(mac)或者 ctrl+f12(win/linux)即可查看类的结构（函数、变量）
 
-![img](../system-design/面试指北.assets/8b23a419-8370-42be-8ebc-02455f3b3236.png)
+![img](system-design/面试指北.assets/8b23a419-8370-42be-8ebc-02455f3b3236.png)
 
 ##### 使用一些插件辅助自己
 
 有一些插件可以帮助我们理清源码的调用逻辑。比如 IDEA 插件 SequenceDiagram 就可以帮助我们一键生成方法的时序图。
 
-![img](../system-design/面试指北.assets/a579fca9-a4c7-4c5b-8ec3-7816abc45084.png)
+![img](system-design/面试指北.assets/a579fca9-a4c7-4c5b-8ec3-7816abc45084.png)
 
 相关阅读：[《安利一个 IDEA 骚操作:一键生成方法的序列图》](https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247494507&idx=2&sn=50764e6f24f3f48738770154d032dde4&chksm=cea1a4a0f9d62db6da5a45de6ac230eb108fb9bd8d71a93e10e3b0a929b9e01d885f158f80ba&scene=178&cur_album_id=1319419426898329600#rd)
 
@@ -804,7 +804,7 @@ Netty 中使用了大量的设计模式以及优秀的设计原则。
 
 像 Leetcode 上面就专门把一些最热门的算法面试题给单独整理了出来。
 
-![img](../system-design/面试指北.assets/27aa2047-0b05-4393-89b7-b6744ae70f38.png)
+![img](system-design/面试指北.assets/27aa2047-0b05-4393-89b7-b6744ae70f38.png)
 
 ### 面试中有哪些常见的手撕代码题？
 
@@ -834,7 +834,7 @@ Netty 中使用了大量的设计模式以及优秀的设计原则。
 
 你可以通过慕课网、哔哩哔哩、拉勾、极客时间、培训机构（比如黑马、尚硅谷）等渠道获取到适合自己的实战项目视频/专栏。
 
-![img](../system-design/面试指北.assets/5aed393a-f5d3-41eb-8476-18913997deb3.png)
+![img](system-design/面试指北.assets/5aed393a-f5d3-41eb-8476-18913997deb3.png)
 
 尽量选择一个适合自己的项目，没必要必须做分布式/微服务项目，对于绝大部分同学来说，能把一个单机项目做好就已经很不错了。
 
@@ -854,7 +854,7 @@ Github 或者码云上面有很多实战类别项目，你可以选择一个来�
 
 你可以参考 [Java 优质开源实战项目](https://javaguide.cn/open-source-project/practical-project.html) 上面推荐的实战类开源项目，质量都很高，项目类型也比较全面，涵盖博客/论坛系统、考试/刷题系统、商城系统、权限管理系统、快速开发脚手架以及各种轮子。
 
-![img](../system-design/面试指北.assets/c81c0f02-24ac-4a6a-bab5-0240c060b176.png)
+![img](system-design/面试指北.assets/c81c0f02-24ac-4a6a-bab5-0240c060b176.png)
 
 一定要记住： **不光要做，还要改进，改善。不论是实战项目视频或者专栏还是实战类开源项目，都一定会有很多可以完善改进的地方**。
 
@@ -868,7 +868,7 @@ Github 或者码云上面有很多实战类别项目，你可以选择一个来�
 
 如果参加这种赛事能获奖的话，项目含金量非常高。即使没获奖也没啥，也可以写简历上。
 
-![img](../system-design/面试指北.assets/5fd25717-d7cd-492b-b964-84913ce4621f.png)
+![img](system-design/面试指北.assets/5fd25717-d7cd-492b-b964-84913ce4621f.png)
 
 #### 参与实际项目 
 
@@ -911,15 +911,15 @@ Github 或者码云上面有很多实战类别项目，你可以选择一个来�
 
 分析你的代码：右键项目-> Analyze->Inspect Code
 
-![img](../system-design/面试指北.assets/c065470a-b2c0-4896-ab99-af854cd7dd43.png)
+![img](system-design/面试指北.assets/c065470a-b2c0-4896-ab99-af854cd7dd43.png)
 
 扫描完成之后，IDEA 会给出一些可能存在的代码坏味道比如命名问题。
 
-![img](../system-design/面试指北.assets/5b4d6cab-f3a2-4f51-a72d-dbaa2eb31344.png)
+![img](system-design/面试指北.assets/5b4d6cab-f3a2-4f51-a72d-dbaa2eb31344.png)
 
 并且，你还可以自定义检查规则。
 
-![img](../system-design/面试指北.assets/4d46853e-e08c-4f25-9018-c7c3f0c6c181.png)
+![img](system-design/面试指北.assets/4d46853e-e08c-4f25-9018-c7c3f0c6c181.png)
 
 ## **接触不到高并发场景咋办？如何获得高并发的经验？**
 
@@ -966,7 +966,7 @@ Github 或者码云上面有很多实战类别项目，你可以选择一个来�
 
 你可以在 JavaGuide 的在线阅读网站上找到上面这些手段对应的详细讲解。篇幅问题，我这里就不帖原文了。网站地址：https://javaguide.cn/ 。
 
-![img](../system-design/面试指北.assets/3e29bdbc-ebe5-4377-bb63-249fcad54b4c.png)
+![img](system-design/面试指北.assets/3e29bdbc-ebe5-4377-bb63-249fcad54b4c.png)
 
 知道了高并发系统设计相关的概念和手段之后，废话不多说，直接推荐两种我觉得比较靠谱的方法。
 
@@ -1019,15 +1019,15 @@ Github 或者码云上面有很多实战类别项目，你可以选择一个来�
 
 - 在线演示：[https://upupor.com](https://upupor.com/) 。
 
-![img](../system-design/面试指北.assets/55e1c636-7cea-4096-aca6-2d8a37aeaccc.png)
+![img](system-design/面试指北.assets/55e1c636-7cea-4096-aca6-2d8a37aeaccc.png)
 
 网站的性能也是不错的：
 
-![img](../system-design/面试指北.assets/5c3d6977-effe-4e19-a308-07eeb18c889a.png)
+![img](system-design/面试指北.assets/5c3d6977-effe-4e19-a308-07eeb18c889a.png)
 
 类似的社区类小众但有两点的项目还有 [forest](https://github.com/rymcu/forest)。
 
-![img](../system-design/面试指北.assets/4f316405-9db0-417f-97df-4361fa7b38a9.png)
+![img](system-design/面试指北.assets/4f316405-9db0-417f-97df-4361fa7b38a9.png)
 
 不同于其他社区项目，forest 这个知识社区项目主打文章分享，可以自定义专题和作品集。看得出来作者维护比较认真，并且很有想法。根据项目首页介绍，这个项目未来还可能会增加专业知识题库、社区贡献系统、会员系统。
 
@@ -1060,15 +1060,15 @@ Github 或者码云上面有很多实战类别项目，你可以选择一个来�
 - 后端： SpringBoot + MyBatis +Spring Security + Elasticsearch+ 支付宝支付
 - 前端：Thymeleaf + Layui。
 
-![img](../system-design/面试指北.assets/8b91f2dc-b533-4550-a899-0556575af9a0.png)
+![img](system-design/面试指北.assets/8b91f2dc-b533-4550-a899-0556575af9a0.png)
 
-![img](../system-design/面试指北.assets/39f39d58-e9bd-40d5-81c6-a2b336cfecfc.png)
+![img](system-design/面试指北.assets/39f39d58-e9bd-40d5-81c6-a2b336cfecfc.png)
 
-![img](../system-design/面试指北.assets/90a179b6-56a8-4578-8d2a-e025f05cd8fe.png)
+![img](system-design/面试指北.assets/90a179b6-56a8-4578-8d2a-e025f05cd8fe.png)
 
 这个项目还有一个爬虫模块用于系统初期测试使用。对 Java 爬虫感兴趣的朋友，可以简单研究一下。
 
-![img](../system-design/面试指北.assets/8e1fbabe-a489-4087-a272-ccad0658657d.png)
+![img](system-design/面试指北.assets/8e1fbabe-a489-4087-a272-ccad0658657d.png)
 
 #### 在线文档管理
 
@@ -1079,11 +1079,11 @@ Github 或者码云上面有很多实战类别项目，你可以选择一个来�
 - 后端：Spring Boot + Hutool + Tika(内容分析工具包) + Elasticsearch + JWT
 - 前端：Vue + axios。
 
-![img](../system-design/面试指北.assets/86195e52-a0e4-4d85-a838-79f2efa3eb70.png)
+![img](system-design/面试指北.assets/86195e52-a0e4-4d85-a838-79f2efa3eb70.png)
 
-![img](../system-design/面试指北.assets/0c122e2a-6b72-4109-bc8e-3d6d47228df5.png)
+![img](system-design/面试指北.assets/0c122e2a-6b72-4109-bc8e-3d6d47228df5.png)
 
-![img](../system-design/面试指北.assets/f26070f9-301f-455f-aa86-ae7692540851.png)
+![img](system-design/面试指北.assets/f26070f9-301f-455f-aa86-ae7692540851.png)
 
 相关地址 ：
 
@@ -1104,7 +1104,7 @@ Github 或者码云上面有很多实战类别项目，你可以选择一个来�
 
 在线演示：https://gesdh.cn/ 。
 
-![img](../system-design/面试指北.assets/8882684f-e219-4682-99bd-cf0b83c5bfc2.png)
+![img](system-design/面试指北.assets/8882684f-e219-4682-99bd-cf0b83c5bfc2.png)
 
 #### 音乐网站
 
@@ -1119,15 +1119,15 @@ Github 地址：https://github.com/Yin-Hongwei/music-website 。
 - 后端 ：SpringBoot + MyBatis + MySQL
 - 前端 ：Vue3.0 + TypeScript + Vue-Router + Vuex + Axios + ElementPlus + Echarts
 
-![img](../system-design/面试指北.assets/c9786f17-5e06-424d-be14-b9a4ba286cf6.png)
+![img](system-design/面试指北.assets/c9786f17-5e06-424d-be14-b9a4ba286cf6.png)
 
 #### 健身会员管理系统
 
 基于基于 RuoYi-Vue 做的一个健身会员管理系统，实现了 JWT 登录、渠道管理、促销活动等功能，附带详细的教程。
 
-![img](../system-design/面试指北.assets/958d8395-2fa0-4821-b399-a62a42a1e6fe.png)
+![img](system-design/面试指北.assets/958d8395-2fa0-4821-b399-a62a42a1e6fe.png)
 
-![img](../system-design/面试指北.assets/917c1dec-c5ee-4855-91ed-3508a673542e.png)
+![img](system-design/面试指北.assets/917c1dec-c5ee-4855-91ed-3508a673542e.png)
 
 Github 地址：https://github.com/lenve/tienchin
 
@@ -1139,7 +1139,7 @@ Github 地址：https://github.com/lenve/tienchin
 
 Github 地址：https://github.com/houbb/cache
 
-![img](../system-design/面试指北.assets/657869aa-2426-4c4e-ac19-56599f12844e.png)
+![img](system-design/面试指北.assets/657869aa-2426-4c4e-ac19-56599f12844e.png)
 
 #### RPC 框架
 
@@ -1150,11 +1150,11 @@ guide-rpc-framework 是一款基于 Netty+Kyro+Zookeeper 实现的 RPC 框架。
 
 这个项目代码注释详细，结构清晰，并且集成了 Check Style 规范代码结构，非常适合阅读和学习。
 
-![img](../system-design/面试指北.assets/3cda6de8-d577-40ac-ad08-fd6b5a7f594d.png)
+![img](system-design/面试指北.assets/3cda6de8-d577-40ac-ad08-fd6b5a7f594d.png)
 
 并且，这个项目的 README 文档写的也非常认真。从 README 文档中，你就可以大概了解到这个 RPC 框架的设计思路以及前置技术。
 
-![img](../system-design/面试指北.assets/c6f47c75-98cf-4d46-b8fb-bfdaf79ae97c.png)
+![img](system-design/面试指北.assets/c6f47c75-98cf-4d46-b8fb-bfdaf79ae97c.png)
 
 #### 数据库
 
@@ -1164,7 +1164,7 @@ MYDB 是一个 Java 语言实现的简易版数据库，部分原理参照自 My
 
 并且，MYDB 作者写了详细的实现教程，教程地址： https://ziyang.moe/cs/project/mydb/
 
-![img](../system-design/面试指北.assets/7e0ffdfd-5029-4335-bb2d-78d4e8983fef.png)
+![img](system-design/面试指北.assets/7e0ffdfd-5029-4335-bb2d-78d4e8983fef.png)
 
 Github 地址：https://github.com/CN-GuoZiyang/MYDB
 
@@ -1174,7 +1174,7 @@ Mini-Compiler 是一个 Mini 版本的入门级编译器，基于 Java 语言编
 
 代码示例：
 
-![img](../system-design/面试指北.assets/cb527169-4489-4076-88ea-dea046ed0b29.png)
+![img](system-design/面试指北.assets/cb527169-4489-4076-88ea-dea046ed0b29.png)
 
 可以看到，代码注释还是非常清晰的，一共只有 7 个类。
 
@@ -1194,7 +1194,7 @@ Github 地址：https://github.com/chenyuwangjs/A-tutorial-compiler-written-in-J
 
 MIT 6.830/6.814: Database Systems 这门课程的内容非常适合想要深入学习数据库原理的小伙伴。这门课程的 lab 是使用 Java 语言一步一步实现一个关系型数据库。
 
-![img](../system-design/面试指北.assets/34a9da65-1e02-4aaa-80ce-5e5b34e4c6cf.png)
+![img](system-design/面试指北.assets/34a9da65-1e02-4aaa-80ce-5e5b34e4c6cf.png)
 
 课程地址：http://db.lcs.mit.edu/6.830/ 。
 
@@ -1245,7 +1245,7 @@ MIT6.824: Distributed System 这门课程出品自 MIT 大名鼎鼎的 PDOS 实�
 
 最有价值的当然是你参加各种大公司组织的各种大赛（比如阿里的天池软件设计大赛）而做的项目，如果参加这种赛事能获奖的话，项目含金量非常高。即使没获奖也没啥，也可以写简历上。
 
-![img](../system-design/面试指北.assets/5fd25717-d7cd-492b-b964-84913ce4621f-1666096434511182.png)
+![img](system-design/面试指北.assets/5fd25717-d7cd-492b-b964-84913ce4621f-1666096434511182.png)
 
 跟着老师或者普通公司做的项目的话，一般都是面向企业级别，一般很少会用到分布式/微服务，基本都是单机，这种项目的含金量稍低，即使你的业务很复杂。遇到这种情况可以考虑说自己去对项目进行改进，别怕花时间，某个时间用心做好一件事情就好比如你对项目的数据模型进行改进、引入缓存提高访问速度等等。
 
@@ -1255,7 +1255,7 @@ MIT6.824: Distributed System 这门课程出品自 MIT 大名鼎鼎的 PDOS 实�
 
 项目太简单的话，不光是影响简历通过的概率，还会影响到你的面试准备，毕竟面试中的重点就是项目经历涉及到的知识点，如果你的项目经历比较简单的话，面试官直接不知道问啥了。个人建议你可以参考《Java 面试指北》中对应的文章对项目经历进行完善改进！
 
-![img](../system-design/面试指北.assets/30362dad-4243-4d2c-94c6-49217df1a32d.png)
+![img](system-design/面试指北.assets/30362dad-4243-4d2c-94c6-49217df1a32d.png)
 
 另外，你还要保证自己的项目的不是烂大街那种（比如商城、博客......），自己参加比赛做的项目或者是企业真实项目是比较好的。
 
@@ -1296,7 +1296,7 @@ MIT6.824: Distributed System 这门课程出品自 MIT 大名鼎鼎的 PDOS 实�
 
 比如下面这个就是一位星球的匿名用户的提问。
 
-![img](../system-design/面试指北.assets/0e5f4e3b-8493-49ca-9a9d-0d0b159946c5.png)
+![img](system-design/面试指北.assets/0e5f4e3b-8493-49ca-9a9d-0d0b159946c5.png)
 
 其实，去外包对简历的影响，主要还是看你去的公司和经历的项目，比如你在 ThoughtWorks 做外包的话我觉得对你的简历就没啥影响，甚至还可能是加分项。我的很多同事跳槽，都是去了字节、阿里这些大公司。
 
@@ -1330,7 +1330,7 @@ MIT6.824: Distributed System 这门课程出品自 MIT 大名鼎鼎的 PDOS 实�
 
 短暂地思考之后，我的内心会陷入短暂的纠结中:我该问吗？不问的话面试官会不会对我影响不好？问什么问题？问这个问题会不会让面试官对我的影响不好啊？
 
-![img](../system-design/面试指北.assets/images-1666096563338186)
+![img](system-design/面试指北.assets/images-1666096563338186.jpg)
 
 ### 面试是一个双向选择的过程
 
@@ -1401,11 +1401,11 @@ MIT6.824: Distributed System 这门课程出品自 MIT 大名鼎鼎的 PDOS 实�
 
 地址：https://www.bilibili.com/video/BV1B4411h7Nz
 
-![img](../system-design/面试指北.assets/81016677-6496-4a18-bd56-97ae95537f9b.png)
+![img](system-design/面试指北.assets/81016677-6496-4a18-bd56-97ae95537f9b.png)
 
 这份资料对应的笔记：https://doocs.github.io/advanced-java/#/
 
-![img](../system-design/面试指北.assets/3483dec6-a48f-4a58-96cd-02e78a19879a.png)
+![img](system-design/面试指北.assets/3483dec6-a48f-4a58-96cd-02e78a19879a.png)
 
 **2、图灵学院的《Java 常见面试题详解系列》**
 
@@ -1415,7 +1415,7 @@ MIT6.824: Distributed System 这门课程出品自 MIT 大名鼎鼎的 PDOS 实�
 
 **3、尚硅谷周阳老师的 《Java 面试题第三季》**
 
-![img](../system-design/面试指北.assets/fab45673-7a8f-4f24-b4dd-f8c2b5d010e6.png)
+![img](system-design/面试指北.assets/fab45673-7a8f-4f24-b4dd-f8c2b5d010e6.png)
 
 Java 培训领域比较出名的周阳老师的作品，内容涵盖算法、Java 核心知识、数据库以及常见框架。
 
@@ -1430,7 +1430,7 @@ Java 培训领域比较出名的周阳老师的作品，内容涵盖算法、Jav
 
 **4、图灵的《分布式面试核心面试题系列》**
 
-![img](../system-design/面试指北.assets/65d7e277-d1b4-439b-8c0e-e74d1062783e.png)
+![img](system-design/面试指北.assets/65d7e277-d1b4-439b-8c0e-e74d1062783e.png)
 
 主要是分布式相关的内容，涵盖负载均衡、分布式 ID、分布式事务、Dubbo、Zookeeper 、Redis。
 
@@ -1438,7 +1438,7 @@ Java 培训领域比较出名的周阳老师的作品，内容涵盖算法、Jav
 
 **5、享学的《Java 面试全解析系列》**
 
-![img](../system-design/面试指北.assets/435595f6-4b41-4e84-826b-9cc92f1dcb36.png)
+![img](system-design/面试指北.assets/435595f6-4b41-4e84-826b-9cc92f1dcb36.png)
 
 内容比较杂，可以挑选自己比较感兴趣面试题学习。可以重点看看数据库这块，对于常见的 MySQL 面试题比如 MySQL 索引数据结构介绍的比较详细。
 

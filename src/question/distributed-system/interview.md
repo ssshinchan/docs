@@ -58,7 +58,7 @@
 
 对于 CAP 理论来说，**Eureka 保证的是 AP**。 Eureka 集群只要有一台 Eureka 正常服务，整个注册中心就是可用的，只是查询到的数据可能是过期的（集群中的各个节点异步方式同步数据，不保证强一致性）。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fguide-blog-images.oss-cn-shenzhen.aliyuncs.com%2Fgithub%2Fjavaguide%2FSpringCloudNetflix.png)
+![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/SpringCloudNetflix.png)
 
 不过，可惜的是，Spring Cloud 2020.0.0 版本移除了 Netflix 除 Eureka 外的所有组件。
 
@@ -90,7 +90,7 @@ Nacos 性能强悍（比 Eureka 能支持更多的服务实例），易用性较
 
 虽然通过 Git 版本管理我们也能追溯配置的修改记录，但是配置中心提供的配置版本管理功能更全面。并且，配置中心通常会在配置版本管理的基础上支持配置一键回滚。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fapolloconfig%2Fapollo%40master%2Fdoc%2Fimages%2Fgray-release%2Fview-release-history.png)
+![img](https://cdn.jsdelivr.net/gh/apolloconfig/apollo@master/doc/images/gray-release/view-release-history.png)
 
 一些功能更全面的配置中心比如`Apollo`甚至还支持灰度发布。
 
@@ -178,7 +178,7 @@ Apollo 特性：
 
 官方给出的 Apollo 基础模型非常简单：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fa75ccb863e4a401d947c87bb14af7dc3.png)
+![img](https://img-blog.csdnimg.cn/a75ccb863e4a401d947c87bb14af7dc3.png)
 
 1. 用户通过 Apollo 配置中心修改/发布配置，
 
@@ -188,7 +188,7 @@ Apollo 特性：
 
 官方给出的架构图如下：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F79c7445f9dbc45adb45699d40ef50f44.png)
+![img](https://img-blog.csdnimg.cn/79c7445f9dbc45adb45699d40ef50f44.png)
 
 - **Client 端（客户端，用于应用获取配置）流程** ：Client 通过域名走 slb（软件负载均衡）访问 Meta Server，Meta Server 访问 Eureka 服务注册中心获取 Config Service 服务列表（IP+Port）。有了 IP+Port，我们就能访问 Config Service 暴露的服务比如通过 GET 请求获取配置的接口（`/configs/{appId}/{clusterName}/{namespace:.+}`）即可获取配置。
 - **Portal 端（UI 界面，用于可视化配置管理）流程** ：Portal 端通过域名走 slb（软件负载均衡）访问 Meta Server，Meta Server 访问 Eureka 服务注册中心获取 Admin Service 服务列表（IP+Port）。有了 IP+Port，我们就能访问 Admin Service 暴露的服务比如通过 POST 请求访问发布配置的接口（`/apps/{appId}/envs/{env}/clusters/{clusterName}/namespaces/{namespaceName}/releases`）即可发布配置。
@@ -228,7 +228,7 @@ config.addChangeListener(new ConfigChangeListener() {
 
 Portal 实际就是一个帮助我们修改和发布配置的 UI 界面。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fe63ef8dc739548e8b504632b151ba4c7.png)
+![img](https://img-blog.csdnimg.cn/e63ef8dc739548e8b504632b151ba4c7.png)
 
 ###### （Software） Load Balancer
 
@@ -314,7 +314,7 @@ COMMIT;
 
 另外，关系型数据库（例如：`MySQL`、`SQL Server`、`Oracle` 等）事务都有 **ACID** 特性：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fguide-blog-images.oss-cn-shenzhen.aliyuncs.com%2Fgithub%2Fjavaguide%2Fmysql%2FACID-167635307295839.png)
+![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/ACID-167635307295839.png)
 
 1. **原子性**（Atomicity） ： 事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用；
 2. **一致性**（Consistency）： 执行事务前后，数据保持一致，例如转账业务中，无论事务是否成功，转账者和收款人的总额应该是不变的；
@@ -333,7 +333,7 @@ COMMIT;
 
 《Designing Data-Intensive Application（数据密集型应用系统设计）》这本书强推一波，值得读很多遍！豆瓣有接近 90% 的人看了这本书之后给了五星好评。另外，中文翻译版本已经在 Github 开源，地址：https://github.com/Vonng/ddia 。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F20210526162552353.png)
+![img](https://img-blog.csdnimg.cn/20210526162552353.png)
 
 **数据事务的实现原理呢？**
 
@@ -403,7 +403,7 @@ CAP 理论和 BASE 理论是分布式领域非常非常重要的两个理论。�
 
 开始介绍 2PC 和 3PC 之前，我们先来介绍一下 2PC 和 3PC 涉及到的一些角色（XA 规范的角色组成）：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fguide-blog-images.oss-cn-shenzhen.aliyuncs.com%2Fgithub%2Fjavaguide%2Fdistributed-system%2Fdistributed-transaction%2Fxa-specification-roles.png)
+![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/distributed-system/distributed-transaction/xa-specification-roles.png)
 
 - **AP（Application Program）**：应用程序本身。
 - **RM（Resource Manager）** ：资源管理器，也就是事务的参与者，绝大部分情况下就是指数据库（后文会以关系型数据库为例），一个分布式事务往往涉及到多个 RM。
@@ -553,7 +553,7 @@ TCC 会记录事务日志并持久化事务日志到某种存储介质上比如�
 
 TCC 事务模型的思想类似 2PC，我简单花了一张图对比一下二者。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fguide-blog-images.oss-cn-shenzhen.aliyuncs.com%2Fgithub%2Fjavaguide%2Fdistributed-system%2Fdistributed-transaction%2F2pc-vs-tcc.png)
+![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/distributed-system/distributed-transaction/2pc-vs-tcc.png)
 
 **TCC 和 2PC/3PC 有什么区别呢？**
 
@@ -577,7 +577,7 @@ RocketMQ 、 Kafka、Pulsar 、QMQ 都提供了事务相关的功能。事务允
 
 这里我们拿 RocketMQ 来说（图源：《消息队列高手课》）。相关阅读：[RocketMQ 事务消息参考文档](https://rocketmq.apache.org/docs/transaction-example/) 。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F2021060810404597.png)
+![img](https://img-blog.csdnimg.cn/2021060810404597.png)
 
 1. MQ 发送方（比如物流服务）在消息队列上开启一个事务，然后发送一个“半消息”给 MQ Server/Broker。事务提交之前，半消息对于 MQ 订阅方/消费者（比如第三方通知服务）不可见
 2. “半消息”发送成功的话，MQ 发送方就开始执行本地事务。
@@ -591,13 +591,13 @@ RocketMQ 中的 Broker 会定期去 MQ 发送方上反查这个事务的本地�
 
 事务反查机制的实现依赖于我们业务代码实现的对应的接口，比如你要查看创建物流信息的本地事务是否执行成功的话，直接在数据库中查询对应的物流信息是否存在即可。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F20210608114710962.png)
+![img](https://img-blog.csdnimg.cn/20210608114710962.png)
 
 如果正常消息没有被正确消费怎么办呢？
 
 消息消费失败的话，RocketMQ 会自动进行消费重试。如果超过最大重试次数这个消息还是没有正确消费，RocketMQ 就会认为这个消息有问题，然后将其放到 死信队列。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F20210608120207740.png)
+![img](https://img-blog.csdnimg.cn/20210608120207740.png)
 
 进入死信队列的消费一般需要人工处理，手动排查问题。
 
@@ -630,7 +630,7 @@ Saga 属于长事务解决方案，其核心思想是将长事务拆分为多个
 
 下图来自于 [微软技术文档—Saga 分布式事务](https://docs.microsoft.com/zh-cn/azure/architecture/reference-architectures/saga/saga) 。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F20210611101344496.png)
+![img](https://img-blog.csdnimg.cn/20210611101344496.png)
 
 如果 T1,T2 ~ Tn 这些短事务都能顺利完成的话，整个事务也就顺利结束，否则，将采取恢复模式。
 
@@ -864,7 +864,7 @@ Open-Falcon 架构图如下：
 
 我专门画了一张图，展示一下日志系统处理日志的一个基本流程。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F39558d5db0fab7865088a9ab3626f575.png)
+![img](https://img-blog.csdnimg.cn/img_convert/39558d5db0fab7865088a9ab3626f575.png)
 
 另外，一些比较高大上的日志系统甚至还支持 **实时分析、离线分析** 等功能
 
@@ -878,7 +878,7 @@ ELK 是目前使用的比较多的一个开源的日志系统解决方案，背�
 
 下图是一个最简单的 **ELK 日志系统架构 ：**
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F7dc144a91d2afa1126889d250fb3ac03.png)
+![img](https://img-blog.csdnimg.cn/img_convert/7dc144a91d2afa1126889d250fb3ac03.png)
 
 我们分别来介绍一下这些开源项目以及它们在这个日志系统中起到的作用：
 
@@ -892,7 +892,7 @@ ELK 属于比较老牌的一款日志系统解决方案，这个方案存在一�
 
 于是， Elastic 推出了 Beats 。Beats 基于名为[libbeat](https://github.com/elastic/beats/tree/master/libbeat)的 Go 框架，一共包含 8 位成员。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fc16f973d5532a0a4f0d686ee6645b67f.png)
+![img](https://img-blog.csdnimg.cn/img_convert/c16f973d5532a0a4f0d686ee6645b67f.png)
 
 这个时候，ELK 已经不仅仅代表 **E**lasticsearch 、**L**ogstash、**K**ibana 这 3 个开源项目了。
 
@@ -900,11 +900,11 @@ Elastic 官方将 ELK 重命名为 **Elastic Stack**（Elasticsearch、Kibana、
 
 Elastic 的官方文档是这样描述的（由 Chrome 插件 Mate Translate 提供翻译功能）：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F274a1a229d2e5dff517e065ecf7b436e.png)
+![img](https://img-blog.csdnimg.cn/img_convert/274a1a229d2e5dff517e065ecf7b436e.png)
 
 现在的 ELK 架构变成了这样：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fff75430c69e043a044bef1a355023dfe-167635397809056.png)
+![img](https://img-blog.csdnimg.cn/img_convert/ff75430c69e043a044bef1a355023dfe-167635397809056.png)
 
 Beats 采集的数据可以直接发送到 Elasticsearch 或者在 Logstash 进一步处理之后再发送到 Elasticsearch。
 
@@ -920,7 +920,7 @@ Filebeat 是 Elastic Stack 的一部分，能够与 Logstash、Elasticsearch 和
 
 Filebeat 能够轻松地将数据传送到 Logstash（对日志进行处理）、Elasticsearch（日志检索）、甚至是 Kibana （日志展示）中。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fc697787897052b1b8270c9904a7b06c8.png)
+![img](https://img-blog.csdnimg.cn/img_convert/c697787897052b1b8270c9904a7b06c8.png)
 
 Filebeat 只是对日志进行采集，无法对日志进行处理。日志具体的处理往往还是要交给 Logstash 来做。
 
@@ -932,7 +932,7 @@ Filebeat 只是对日志进行采集，无法对日志进行处理。日志具�
 
 Filebeat 替代 Logstash 采集日志，具体的日志处理还是由 Logstash 来做。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F22f3304f9800c1a49ce1f5c610da262d.png)
+![img](https://img-blog.csdnimg.cn/img_convert/22f3304f9800c1a49ce1f5c610da262d.png)
 
 针对上图的日志系统架构图，有下面几个可优化点：
 
@@ -943,7 +943,7 @@ Filebeat 替代 Logstash 采集日志，具体的日志处理还是由 Logstash 
 
 EFK 中的 F 代表的是 [Fluentd](https://github.com/fluent/fluentd)。下图是一个最简单的 **EFK 日志系统架构 ：**
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F8005ba7b087ad3e00643e5f1c4a854b4.png)
+![img](https://img-blog.csdnimg.cn/img_convert/8005ba7b087ad3e00643e5f1c4a854b4.png)
 
 Fluentd 是一款开源的日志收集器，使用 Ruby 编写，其提供的功能和 Logstash 差不多。但是，要更加轻量，性能也更优越，内存占用也更低。具体使用教程，可以参考[《性能优越的轻量级日志收集工具，微软、亚马逊都在用！》](https://mp.weixin.qq.com/s/sXYDIJpIhPsVGNkSCIaNfQ)。
 
@@ -959,11 +959,11 @@ Fluentd 是一款开源的日志收集器，使用 Ruby 编写，其提供的功
 
 官方的介绍也比较有意思哈！` Like Prometheus,But For Logs`. （类似于 Prometheus 的日志系统，不过主要是为日志服务的）。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Ff6df2d0349aad765e9c924ec469f5d59.png)
+![img](https://img-blog.csdnimg.cn/img_convert/f6df2d0349aad765e9c924ec469f5d59.png)
 
 根据官网 ，Loki 的架构如下图所示
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fc629732c94614af8a474006aab05099d.png)
+![img](https://img-blog.csdnimg.cn/c629732c94614af8a474006aab05099d.png)
 
 Loki 的整个架构非常简单，主要有 3 个组件组成：
 

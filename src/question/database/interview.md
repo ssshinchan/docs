@@ -123,13 +123,13 @@ undo log 属于逻辑日志，记录的是 SQL 语句，比如说事务执行一
 
 二叉查找树(BST，Binary Search Tree)，也叫二叉排序树，在二叉树的基础上需要满足：任意节点的左子树上所有节点值不大于根节点的值，任意节点的右子树上所有节点值不小于根节点的值。如下是一颗 BST([图片来源](https://blog.csdn.net/qq_25940921/article/details/82183093))。
 
-![img](../system-design/面试指北.assets/images)
+![img](../system-design/面试指北.assets/images.png)
 
 当需要快速查找时，将数据存储在 BST 是一种常见的选择，因为此时查询时间取决于树高，平均时间复杂度是 O(lgn)。然而，BST**可能长歪而变得不平衡**，如下图所示([图片来源](https://blog.csdn.net/qq_25940921/article/details/82183093))，此时 BST 退化为链表，时间复杂度退化为 O(n)。
 
 为了解决这个问题，引入了平衡二叉树。
 
-![img](../system-design/面试指北.assets/images(1))
+![img](../system-design/面试指北.assets/images%281%29.png)
 
 #### 平衡二叉树(AVL)：旋转耗时
 
@@ -143,7 +143,7 @@ AVL 实现平衡的关键在于旋转操作：插入和删除可能破坏二叉�
 
 与 AVL 树相比，红黑树并不追求严格的平衡，而是大致的平衡：只是确保从根到叶子的最长的可能路径不多于最短的可能路径的两倍长。从实现来看，红黑树最大的特点是每个节点都属于两种颜色(红色或黑色)之一，且节点颜色的划分需要满足特定的规则(具体规则略)。红黑树示例如下（[图片来源](https://www.jianshu.com/p/1dbbee88c9d9)）：
 
-![img](../system-design/面试指北.assets/images(2))
+![img](../system-design/面试指北.assets/images%282%29.png)
 
 与 AVL 树相比，红黑树的查询效率会有所下降，这是因为树的平衡性变差，高度更高。但红黑树的删除效率大大提高了，因为红黑树同时引入了颜色，当插入或删除数据时，只需要进行 O(1)次数的旋转以及变色就能保证基本的平衡，不需要像 AVL 树进行 O(lgn)次数的旋转。总的来说，红黑树的统计性能高于 AVL。
 
@@ -166,7 +166,7 @@ B 树也称 B-树(其中-不是减号)，是为磁盘等辅存设备设计的多
 
 下图是一个 3 阶 B 树的例子（[图片来源](https://www.2cto.com/net/201808/773535.html)）：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg2018.cnblogs.com%2Fblog%2F1174710%2F201909%2F1174710-20190925074904497-1088606861.png)
+![img](https://img2018.cnblogs.com/blog/1174710/201909/1174710-20190925074904497-1088606861.png)
 
 B 树的优势除了树高小，还有对访问局部性原理的利用。所谓局部性原理，是指当一个数据被使用时，其附近的数据有较大概率在短时间内被使用。B 树将键相近的数据存储在同一个节点，当访问其中某个数据时，数据库会将该整个节点读到缓存中；当它临近的数据紧接着被访问时，可以直接在缓存中读取，无需进行磁盘 IO；换句话说，B 树的缓存命中率更高。
 
@@ -792,7 +792,7 @@ HASH_SLOT = CRC16(key) mod NUMER_OF_SLOTS
 
 如果哈希槽确实是当前节点负责，那就直接响应客户端的请求返回结果，如果不由当前节点负责，就会返回 -MOVED 重定向错误，告知客户端当前哈希槽是由哪个节点负责，客户端向目标节点发送请求并更新缓存的哈希槽分配信息。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fguide-blog-images.oss-cn-shenzhen.aliyuncs.com%2Fgithub%2Fjavaguide%2Fdatabase%2Fredis%2Fredis-cluster%2Fredis-cluster-3-find-hash-slot.png)
+![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/database/redis/redis-cluster/redis-cluster-3-find-hash-slot.png)
 
 这个时候你可能就会疑问：**为什么还会存在找错节点的情况呢？根据公式计算难道还会出错？**
 
@@ -1007,7 +1007,7 @@ union clusterMsgData {
 
 #### **Elasticsearch 基础**
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2F20210201160425128.png)
+![img](https://img-blog.csdnimg.cn/20210201160425128.png)
 
 ##### Elasticsearch 是什么？
 
@@ -1041,11 +1041,11 @@ Github 地址：https://github.com/apache/lucene
 
   电商网站检索：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F699e89ed90febc77dafa5875b0320d2d.png)
+![img](https://img-blog.csdnimg.cn/img_convert/699e89ed90febc77dafa5875b0320d2d.png)
 
 ELK 日志采集系统架构（负责日志的搜索)：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fff75430c69e043a044bef1a355023dfe.png)
+![img](https://img-blog.csdnimg.cn/img_convert/ff75430c69e043a044bef1a355023dfe.png)
 
 ##### 为什么需要 Elasticsearch？MySQL 不行吗？
 
@@ -1109,7 +1109,7 @@ MySQL 与 Elasticsearch 的概念简单类比：
 
 如下图所示，倒排索引使用 **词语/词条（Term）** 来作为索引关键字，并同时记录了哪些 **文档（Document）** 中有这个词语。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F6a90b193af22b397d3f8ef2b51064e6f.png)
+![img](https://img-blog.csdnimg.cn/img_convert/6a90b193af22b397d3f8ef2b51064e6f.png)
 
 - 文档（Document） ：用来搜索的数据，其中的每一条数据就是一个文档。例如一个商品信息、商家信息、一页网页的内容。
 - 词语/词条（Term） ：对文档数据或用户搜索数据，利用某种算法分词，得到的具备含义的词语就是词条。例如 ''数据库索引可以大幅提高查询速度" 这段话被中文分词器 IK Analyzer 细粒度分词后得到[数据库,索引,可以,大幅,提高,查询,速度]。
@@ -1133,7 +1133,7 @@ MySQL 与 Elasticsearch 的概念简单类比：
 
 Lucene 的倒排索引大致是下面这样的（图源：https://segmentfault.com/a/1190000037658997）：
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fbf95cdf34c3dd219e9d7422d74aa20b0.jpeg)
+![img](https://img-blog.csdnimg.cn/img_convert/bf95cdf34c3dd219e9d7422d74aa20b0.jpeg)
 
 **倒排索引检索流程：**
 
@@ -1154,7 +1154,7 @@ Lucene 的倒排索引大致是下面这样的（图源：https://segmentfault.c
 
 不同于倒排索引，正排索引将文档 ID 和分词建立关联。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Fd5e0f71bf6b88948365765b3b3887f6c.png)
+![img](https://img-blog.csdnimg.cn/img_convert/d5e0f71bf6b88948365765b3b3887f6c.png)
 
 根据词语查询时，必须先逐条获取每个文档，然后判断文档中是否包含所需要的词语，查询效率较低。
 
@@ -1198,7 +1198,7 @@ Analyzer 翻译成中文叫做分析器，不过，很多人一般习惯称呼�
 
 上面这些也都是 ES 内置的分词器，详细介绍请看官方文档：https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F3d900575010cb6c8c743e3a6f7ad01f1.png)
+![img](https://img-blog.csdnimg.cn/img_convert/3d900575010cb6c8c743e3a6f7ad01f1.png)
 
 这个官方文档为每一个分词器都列举了对应的例子帮助理解，比如 Standard Analyzer 的例子是下面这样的。
 
@@ -1260,7 +1260,7 @@ Keyword Analyzer 分词示例：
 
 下图是默认分词器 Standard Analyzer 的分词流程。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fguide-blog-images.oss-cn-shenzhen.aliyuncs.com%2Fgithub%2Fjavaguide%2Fsearch-engine%2Fes%2Fprocess-flow-of-standard-analyzer.png)
+![img](https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/search-engine/es/process-flow-of-standard-analyzer.png)
 
 ##### Elasticsearch 如何基于拼音搜索？
 
@@ -1566,7 +1566,7 @@ GET users/_search
 
 `match_phrase` 查询多个检索词之间默认是 and 关系，并且词的位置关系影响搜索结果
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2Ff82d8fe41a47fa739eee8cad7ebcb9d8.png)
+![img](https://img-blog.csdnimg.cn/img_convert/f82d8fe41a47fa739eee8cad7ebcb9d8.png)
 
 ##### Multi match 有几种匹配策略，都有什么区别？
 
@@ -1678,7 +1678,7 @@ GET /users/_search
 2. MySQL Master 节点接收到请求之后，根据偏移量将新的 binlog 发送给 MySQL Slave 节点；
 3. Canal 接收到 binlog 之后，就可以对这部分日志进行解析，获取主库的结构及数据变更。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F5c4a078f673d83329c5eb90bf9720de8.png)**Elasticsearch 集群**
+![img](https://img-blog.csdnimg.cn/img_convert/5c4a078f673d83329c5eb90bf9720de8.png)**Elasticsearch 集群**
 
 #### **Elasticsearch 集群**
 
@@ -1688,7 +1688,7 @@ GET /users/_search
 
 Elasticsearch 集群说白了就是多个 Elasticsearch 节点的集合，这些节点共同协作，一起提供服务，这样就可以解决单台 Elasticsearch 服务器无法处理的搜索需求和数据存储需求。出于高可用方面的考虑，集群中节点数量建议 3 个以上，并且其中至少两个节点不是仅投票主节点（后文会介绍到）。
 
-![img](../system-design/面试指北.assets/imagesurl=https%3A%2F%2Fwww.dbi-services.com%2Fblog%2Fwp-content%2Fuploads%2Fsites%2F2%2F2022%2F01%2FElasticsearch-index-shards.png)
+![img](https://www.dbi-services.com/blog/wp-content/uploads/sites/2/2022/01/Elasticsearch-index-shards.png)
 
 Elasticsearch 集群可以很方便地实现横向扩展，我们可以动态添加或者删除 Elasticsearch 节点。当有节点加入集群中或者从集群中移除节点时，集群将会重新平均分布所有的数据。
 
